@@ -1,0 +1,6 @@
+.row
+  #filter.transfer-filter.col-md-12
+.row
+  #list.col-md-10.col-md-offset-1
+.row
+  #new.col-md-4.col-md-offset-4

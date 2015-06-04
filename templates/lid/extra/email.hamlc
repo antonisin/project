@@ -1,0 +1,6 @@
+.contact_info_form.form-group{:style => "margin-top: 2px;"}
+  %input.form-control.max_float_input{placeholder: "Email", type: "email", name: "extraEmail"}
+    %button.btn.btn-success.btn-default.checkEmail
+      %span.fa.fa-refresh
+    %button.btn.btn-danger.btn-default.email_remove{:style => "margin-left: -3px;"}
+      %span.fa.fa-times

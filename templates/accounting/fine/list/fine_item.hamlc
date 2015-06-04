@@ -1,0 +1,17 @@
+%td=@order
+%td=@created
+%td=@pnr
+%td=@statusModel.text
+%td=@value
+%td=@agentName
+%td.actions-cell
+  - if @isActive
+    .btn-group
+      %a.edit.btn.btn-sm.green
+        %i.fa.fa-pencil-square
+      %a.delete.btn.btn-sm.red
+        %i.fa.fa-trash-o
+  - else
+    .btn-group
+      %button.btn.btn-sm.blue
+        %i.fa.fa-check

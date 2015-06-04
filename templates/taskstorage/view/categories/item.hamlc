@@ -1,0 +1,5 @@
+%a{:data-id =>"#{@id}", :style => "cursor: pointer;"}
+  %i.fa{:class => "fa-list"}
+  #{@name}
+  - if parseInt(@showCounter) == 1
+    %span.right.text-center{:style => "width: 26px;", :class => "#{@countColor}"} #{'' if @count < 10}#{@count}

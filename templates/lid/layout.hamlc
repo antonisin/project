@@ -1,0 +1,8 @@
+#lid.clearfix
+#bookings.hist
+#tasksBar
+.clearfix.taskManager
+  #tasksPaper.col-md-8
+  #salesPaper.col-md-4
+#booking
+#history

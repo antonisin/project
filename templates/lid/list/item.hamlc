@@ -1,0 +1,141 @@
+- if new Date().setHours(0,0,0,0) == new Date($.datepicker.parseDate('dd/mm/yy', @changedFormatted)).setHours(0,0,0,0)
+  - color = 'custom-green'
+  %td{:class => "#{color}"}
+    Сегодня
+- else if (new Date().setHours(0,0,0,0) - new Date($.datepicker.parseDate('dd/mm/yy', @changedFormatted)).setHours(0,0,0,0))/86400000 <= 1
+  - color = 'custom-yellow'
+  %td{:class => "#{color}"}
+    Вчера
+- else if (new Date().setHours(0,0,0,0) - new Date($.datepicker.parseDate('dd/mm/yy', @changedFormatted)).setHours(0,0,0,0))/86400000 < 100
+  - color = ''
+  %td{:class => "#{color}"}
+    #{((new Date().setHours(0,0,0,0) - new Date($.datepicker.parseDate('dd/mm/yy', @changedFormatted)).setHours(0,0,0,0))/86400000).toFixed(0)} д. ранее
+- else
+  - color = 'custom-yellow'
+  %td{:class => "#{color}"}
+    Раннее
+- if @allBookings.length < 2
+  %td.notClick{:class => "#{color}"}
+    #{@id}/
+    %span.red
+      #{@bookingNumber}
+  %td{:class => "#{color}"}= @firstName
+  %td{:class => "#{color}"}= @lastName
+  - if @bookingModel.startLocation
+    %td{:class => "#{color}"}= @bookingModel.startLocationModel.code
+  - else
+    %td{:class => "#{color}"}
+  - if @bookingModel.endLocation
+    %td{:class => "#{color}"}= @bookingModel.endLocationModel.code
+  - else
+    %td{:class => "#{color}"}
+  - if @bookingModel.startDate
+    %td{:class => "#{color}"}= @bookingModel.startDate
+  - else
+    %td{:class => "#{color}"}
+  - if @bookingModel.endDate
+    %td{:class => "#{color}"}= @bookingModel.endDate
+  - else
+    %td{:class => "#{color}"}
+  - if @bookingNumber
+    %td{:class => "#{color}"}= @bookingModel.adults + '/' + @bookingModel.children + '/' + @bookingModel.newborns
+  - else
+    %td{:class => "#{color}"}
+  - if @bookingModel.isBusiness is 1
+    - if @bookingModel.isEconom is 1
+      %td{:class => "#{color}"} БС, ЕС
+    -else if @bookingModel.isEconom is 0
+      %td{:class => "#{color}"} БС
+  - else if @bookingModel.isEconom is 1
+    %td{:class => "#{color}"} ЕС
+  - else
+    %td{:class => "#{color}"}
+  %td{:class => "#{color}"} #{@phone.slice(0,4)} ... #{@phone.slice(-3)}
+  %td{:class => "#{color}"}= @bookingModel.offersNumber5
+  %td{:class => "#{color}"}
+    - if @agentComment != null and @agentComment != '' and  @agentComment.length > 9
+      %span.pop{ data-toggle:"popover", data-placement:"top", data-content:"#{@bookingModel.comment}", title: "Комментарии агента"}= @agentComment + "..."
+    - else
+      %span.pop= @agentComment
+  %td{:class => "#{color}"}
+    %span.pop=
+  %td{:class => "#{color}"} #{@email.slice(0,4)} ... #{@email.slice(@email.indexOf('@'))}
+  %td{:class => "#{color}"}
+  %td{:class => "#{color}"}= @changedFormatted
+  %td.actions-cell{:class => "#{color}"}
+    .btn-group
+      %a#delete.btn.btn-sm.red
+        %i.fa.fa-times
+-else
+  %td.notClick{:class => "#{color}"}
+    #{@id}/
+    %span.red
+      #{@bookingNumber}
+      %i.fa.fa-long-arrow-down.fa-long-arrow-down.lidTableArrow
+  %td{:class => "#{color}"}= @firstName
+  %td{:class => "#{color}"}= @lastName
+
+  %td{:class => "#{color}"}
+    %div.lidTableItemHide.lidTableItems
+      - for booking in @allBookings
+        %div{ :style => "height:20px; width: 30px; overflow: hidden;" }
+          - if booking.startLocation
+            #{booking.startLocationModel.code}
+
+  %td{:class => "#{color}"}
+    %div.lidTableItemHide.lidTableItems
+      - for booking in @allBookings
+        %div{ :style => "height:20px; width: 30px; overflow: hidden;" }
+          - if booking.endLocation
+            #{booking.endLocationModel.code}
+
+  %td{:class => "#{color}"}
+    %div.lidTableItemHide.lidTableItems
+      - for booking in @allBookings
+        %div{ :style => "height:20px; width: 68px; overflow: hidden;" }
+          - if booking.startDate
+            #{booking.startDate}
+
+  %td{:class => "#{color}"}
+    %div.lidTableItemHide.lidTableItems
+      - for booking in @allBookings
+        %div{ :style => "height:20px; width: 68px; overflow: hidden;" }
+          - if booking.endDate
+            #{booking.endDate}
+
+  %td{:class => "#{color}"}
+    %div.lidTableItemHide.lidTableItems
+      - for booking in @allBookings
+        %div{ :style => "height:20px;width:46px;" }
+          - if booking.adults > 0 or booking.children > 0 or booking.newborns > 0
+            #{booking.adults}/#{booking.children}/#{booking.newborns}
+
+  %td{:class => "#{color}"}
+    %div.lidTableItemHide.lidTableItems
+      - for booking in  @allBookings
+        %div{ :style => "height:20px;width:40px;" }
+          - if booking.isBusiness is 1 and booking.isEconom is 1
+            БС, ЕС
+          - else if booking.isEconom is 1
+            ЕС
+          - else if booking.isBusiness is 1
+            БС
+
+  %td{:class => "#{color}"} #{@phone.slice(0,4)} ... #{@phone.slice(-3)}
+  %td{:class => "#{color}"}= @bookingModel.offersNumber
+
+  %td{:class => "#{color}"}
+    - if @agentComment != null and @agentComment != '' and  @agentComment.length > 9
+      %span.pop{ data-toggle:"popover", data-placement:"top", data-content:"#{@bookingModel.comment}", title: "Комментарии агента"}= @agentComment + "..."
+    - else
+      %span.pop= @agentComment
+
+  %td{:class => "#{color}"}
+    %span.pop=
+  %td{:class => "#{color}"} #{@email.slice(0,4)} ... #{@email.slice(@email.indexOf('@'))}
+  %td{:class => "#{color}"}
+  %td{:class => "#{color}"}= @changedFormatted
+  %td.actions-cell
+    .btn-group
+      %a#delete.btn.btn-sm.red
+        %i.fa.fa-times

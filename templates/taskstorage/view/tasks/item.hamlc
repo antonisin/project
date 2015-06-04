@@ -1,0 +1,23 @@
+%td.text-center{:width => "42px"}
+  %i.fa{:class => "fa-gear" }
+%td.text-center
+  #{@timeFormatted.substr(0,5)}
+%td.text-center
+  #{@dateFormatted}
+%td{:width => "100px"}
+  - if @lid.firstName and @lid.id
+    %a.linkLid{:style => "cursor: pointer;"} #{@lid.firstName}
+%td.text-center
+  #{@lid.booking.startLocationCode}#{@lid.booking.endLocationCode}
+%td{:style => "padding-right: 0;"}
+  %i.fa.fa-comment.right.text-muted.right{:class => "text-success" if @comments.length > 0}
+  .message #{@message}
+%td.text-center.controls{:width => "90px"}
+  %i.fa.fa-thumb-tack.text-muted.isPicked{:class => 'text-success' if @isPicked}
+  %i.fa.fa-star.text-muted.isMarked{:class => 'text-yellow' if @isMarked}
+%td.text-center.controls{:width => "84px"}
+  - if @isDone == 0
+    %i.fa.fa-check.done
+    %i.fa.fa-times.hideTask
+  - else
+    %i.fa.fa-check.text-success

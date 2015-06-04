@@ -1,0 +1,26 @@
+%form.form-inline.panel.panel-success.fine-form.top-labels
+  .panel-heading
+    %h3.panel-title Добавить штраф
+  .panel-body
+    .form-body
+      .col-md-3
+        .form-group.text-center
+          %label{for: "lid"} Лид
+          %input.form-control{type: "text", name: "lid", placeholder: "ID Лида"}
+      .col-md-4
+        .form-group.text-center
+          %label{for: "reason"} Нарушение
+          %select.form-control{name: "reason", title: "Нарушение"}
+            %option -
+            - for item in @selectHelper.models
+              %option{value: "#{item.get('id')}", data: "#{item.get('point')}"}= item.get('text')
+      .col-md-2
+        .form-group.text-center
+          %label{for: "points"} Баллы
+          %input.form-control.text-center{type: "text", name: "points", placeholder: "Баллы", readonly:"readonly"}
+      .text-center
+        .btn-group.text-center
+          %button.btn.red.closeBtn{type: 'button'}
+            %i.fa.fa-times
+          %button.btn.blue.saveBtn{type: 'button'}
+            %i.fa.fa-check

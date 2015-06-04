@@ -1,0 +1,12 @@
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; border-right: 1px solid #F4F4F4;"}
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; border-right: 1px solid #F4F4F4;"}
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; border-right: 1px solid #F4F4F4;"}
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; border-right: 1px solid #F4F4F4;"}
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; text-align:right;"} ИТОГО:
+%td{:style=> "font-weight: 900;"} #{(@income).toFixed(2)} р.
+%td{:style=> "font-weight: 900;"} #{(@incomeRUB).toFixed(2)} р.
+%td{:style=> "font-weight: 900;"} #{(@incomeUSD).toFixed(2)} $
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; border-right: 1px solid #F4F4F4;"}
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; border-right: 1px solid #F4F4F4;"}
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; border-right: 1px solid #F4F4F4;"}
+

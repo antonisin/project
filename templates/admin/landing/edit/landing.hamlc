@@ -1,0 +1,29 @@
+.col-md-12
+  .row
+    .clearfix
+      .col-md-12{:style=>"margin-bottom: -12px;"}
+        %label.col-md-2.control-label.form-group.text-right{:style=>"margin-top: 8px !important;"} Локация
+        .col-md-5.form-group
+          %input#location-select.form-control{:placeholder => 'Локация', :name => "location", :type => "text"}
+        %label.col-md-1.control-label.form-group.text-right{:style=>"margin-top: 8px !important;"} Путь
+        .col-md-4.form-group
+          %input.form-control{:type=>"text", :name=>"url", :placeholder=>"Путь"}
+      .col-md-12.
+        %label.col-md-2.control-label.form-group.text-right{:style=>"margin-top: 8px !important;"} Направление
+        .col-md-5.form-group
+          %select#direction.form-control(name="direction")
+        %label.col-md-1.control-label.form-group.text-right{:style=>"margin-top: 8px !important;"} Цена
+        .col-md-4.form-group
+          %input.form-control{:type => "text", :name => "price", :placeholder => "Цена"}
+      .col-md-4
+        %div{:style=>"width:100%;height:30px;z-index: 1; position: relative;"}
+          %div.btn-group.left{"data-toggle" => "buttons", :style => "margin-bottom:2px;font-style: normal;"}
+            %button.btn.btn-default{:style => ""}
+              %span.ActiveLabelDefault
+                %input.toggle.label(name="isPublic", type="radio", value=1) ON
+            %button.btn.btn-default
+              %span.ActiveLabelDefault
+                %input.toggle.label(name="isPublic", type="radio", value=0) OFF
+      .col-md-4.col-md-offset-4.form-group
+        %a.btn.dt-add.green#add
+          %i.fa.fa-plus-square

@@ -1,0 +1,9 @@
+%td= @name
+%td= @code
+
+%td.actions-cell
+  .btn-group
+    %a#edit.btn.btn-sm.green
+      %i.fa.fa-pencil-square
+    %a#delete.btn.btn-sm.red
+      %i.fa.fa-trash-o

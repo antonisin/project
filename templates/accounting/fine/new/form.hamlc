@@ -1,0 +1,33 @@
+%form.form-inline.panel.panel-success.fine-form.top-labels
+  .panel-heading
+    %h3.panel-title Добавить штраф
+  .panel-body
+    .form-body
+      .col-md-3
+        .form-group.text-center
+          %label{for: "day"} Дата
+          .input-group.date.form_datetime.date-picker
+            %input.form-control.block-3.ttp{readonly: "readonly", placeholder: "Дата", name: "day", type: "text"}
+            %span.input-group-btn
+              %button.btn.default.date-set
+                %i.fa.fa-calendar
+      .col-md-3
+        .form-group.text-center
+          %label{for: "pnr"} Код
+          %input.form-control{type: "text", name: "pnr", placeholder: "Код"}
+      .col-md-2
+        .form-group.text-center
+          %label{for: "status"} Статус
+          %select.form-control{name: "status", title: "Статус"}
+            - for item in @selectHelper.models
+              %option{value: "#{item.get('id')}"}= item.get('text')
+      .col-md-2
+        .form-group.text-center
+          %label{for: "value"} Сумма
+          %input.form-control{type: "text", name: "value", placeholder: "Сумма"}
+      .text-center
+        .btn-group.text-center
+          %button.btn.red.closeBtn{type: 'button'}
+            %i.fa.fa-times
+          %button.btn.blue.saveBtn{type: 'button'}
+            %i.fa.fa-check

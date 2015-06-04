@@ -1,0 +1,37 @@
+.portlet.box.blue.tabbable.message_tab
+  .portlet-title
+    .caption
+      %a.btn.yellow{href: "#"}
+        %i.fa.fa-plus
+      %button.btn.dark{type: "button"} Новые сообщения
+  .portlet-body
+    .portlet-tabs
+      %ul.nav.nav-tabs
+        %li.active{:style => "cursor: pointer;", :data => "1"}
+          %a
+            Сегодня
+        %li{:style => "cursor: pointer;", :data => "3"}
+          %a
+            Неделя
+        %li{:style => "cursor: pointer;", :data => "4"}
+          %a
+            Месяц
+        -#%li{:style => "cursor: pointer;", :data => "999999993"}
+        -#  %a
+        -#    Все
+        -#%li{:style => "cursor: pointer;", :data => ""}
+        -#  %a
+            Черновик
+      .tab-content
+        #portlet_tab_1.tab-pane.active
+          %table.table.table-striped.table-bordered.table-advance.table-hover
+            %thead
+              %tr
+                %th.text-center
+                  %i.fa.fa-bookmark-o
+                %th.text-center Время
+                %th.hidden-xs.text-center Клиент
+                %th.text-center Комментарии
+                %th.text-center{:style => "width: 60px;"}
+                  %i.fa.fa-gear
+            %tbody

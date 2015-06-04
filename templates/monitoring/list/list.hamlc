@@ -1,0 +1,18 @@
+%table#lidstable.table.table-striped.table-bordered.table-hover.table-full-width
+  %thead
+    %th #
+    %th Имя агента
+    %th EXT
+    %th PR
+    %th Л.
+    %th.text-center.ttp.has-tooltip(title="Доход" data-container="body")
+      %i.fa.fa-dollar
+    %th Опыт
+    %th Лим.
+    %th.line-time
+    %th.text-center.ttp.has-tooltip.direction(title="Направление" data-container="body")
+      %i.fa.fa-phone
+    %th.client Клиент
+    %th.text-center.ttp.has-tooltip(title="Управление" data-container="body")
+      %i.fa.fa-gear
+  %tbody

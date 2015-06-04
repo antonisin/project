@@ -1,0 +1,13 @@
+.pnr_header_left.left
+  .alert.alert-block.alert-danger.alert-warning
+    %button.close(type="button")
+      %span(aria-hidden="true")
+    %h4.alert-heading 
+      %i.fa.fa-times-circle.fa-lg
+      Импорт завершен с ошибками
+    %p#msg
+    .container
+      .row
+        .col-md-12
+          %button.btn.btn-info.btn-xs#remove-spaces
+            Очистить ввод

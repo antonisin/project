@@ -1,0 +1,28 @@
+%form.form-horizontal
+  .form-body
+    .row
+      .form-group
+        .col-md-12
+          %select.form-control{:name => "category"}
+            - for category in window.data.taskCategories
+              - if parseInt(category.inList) is 1
+                %option{:value => "#{category.id}"}  #{category.name}
+    .row
+      .form-group
+        .col-md-12
+          %textarea.form-control{:type => "text", :name =>"message", :placeholder => "Текст", :style => "resize: none;"}
+    .row
+      .col-md-6
+        .form-group
+          .input-group.date.date-picker
+            %input.form-control{:type => "text" ,:name => "date", :readonly => "readonly", :placeholder => "Дата"}
+            %span.input-group-btn
+              %button.btn.default.date-set
+                %i.fa.fa-calendar
+      .col-md-6
+        .form-group
+          .input-group.form_time
+            %input.form-control.timepicker{:type => "text", :ondragstart  => "return false;",  :name => "time"}
+            %span.input-group-btn
+              %button.btn.default{:type => "button"}
+                %i.fa.fa-clock-o

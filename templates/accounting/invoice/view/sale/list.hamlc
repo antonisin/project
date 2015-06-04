@@ -1,0 +1,16 @@
+%h4.text-center Продажи
+%table#salesTable.table.table-striped.table-bordered.table-hover.table-full-width
+  %thead
+    %th #
+    %th Дата
+    %th Продажа
+    %th PNR
+    %th Класс
+    %th Доход
+    %th В ЗП
+    %th В $ ЗП
+    %th Доля
+    %th %
+    %th.text-center
+      %input#selectAll(type="checkbox")
+  %tbody

@@ -1,0 +1,8 @@
+%td.text-center
+  %span.glyphicon.glyphicon-earphone
+%td.highlight.text-center #{@timeFormatted}
+%td.hidden-xs #{@lid?.firstName} #{@lid?.lastName}
+%td #{@message}
+%td.text-center
+  %a.btn{href: "#"}
+    %i.glyphicon.glyphicon-remove

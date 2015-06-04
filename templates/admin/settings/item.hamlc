@@ -1,0 +1,6 @@
+%td= @name
+%td= @systemName
+%td= @value
+%td.actions-cell
+  %a#delete.btn.btn-sm.red(class ="#{'muted' if @isSystem}")
+    %i.fa.fa-trash-o

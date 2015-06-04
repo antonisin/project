@@ -1,0 +1,6 @@
+%a.left.without-hover(href="#lid/#{@url}" style="clear:none;border-bottom: none !important; width: 419px;")
+  %i.fa(class="fa-#{@icon}")
+  %span(style="word-wrap: break-word;") = @message
+%a.right.cross.closeTask( style="clear:none;border-bottom: none !important;padding: 6px 4px 4px 4px !important;")
+  %i.fa{:class=>"glyphicon glyphicon-remove right"}
+%span.selected(style="display:none")

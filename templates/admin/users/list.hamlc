@@ -1,0 +1,14 @@
+%a#add.btn.green.dt-add
+  %i.fa.fa-plus-square
+
+%table#lidstable.table.table-striped.table-bordered.table-hover.table-full-width
+  %thead
+    %th Имя
+    %th Фамилия
+    %th Email
+    %th.text-center Приоритет/Лимит
+    %th.text-center
+      %i.fa.fa-check
+    %th.text-center
+      %i.fa.fa-gear
+  %tbody

@@ -1,0 +1,36 @@
+%form.form-horizontal
+  .form-body
+    .form-group
+      %label.col-md-3.control-label Страна
+      .col-md-9
+        %select.form-control(name="country")
+          - for country in @countries.models
+            %option(value= country.id)= country.get('name')
+      
+    .form-group
+      %label.col-md-3.control-label Код
+
+      .col-md-3
+        %input#city-select.form-control(type="text" name="code" placeholder="Код")
+      
+      .col-md-5.col-md-offset-1
+        %select.form-control(name="is_city")
+          %option(value="0") Аэропорт
+          %option(value="1") Город
+
+    #airports(style="display:#{if @is_city is "1" then 'block' else 'none'};")
+
+    %hr
+    #city.form-group(style="display:#{if @is_city is "1" then 'none' else 'block'};")
+      %label.col-md-4.control-label Город
+      .col-md-8
+        %input#city-select.form-control.col-md-8{:placeholder => 'Город', :name => "city", :type => "text"}
+    
+    - for locale in @locales
+      .form-group
+        %label.col-md-4.control-label
+          %img.flag(src="/bundles/fwmetronic/img/blank.gif" class="flag-#{locale.code}")
+          = "Название (#{locale.name})"
+        .col-md-8
+          %input.form-control(type="text" name="name_#{locale.code}" placeholder="Название (#{locale.name})")
+    

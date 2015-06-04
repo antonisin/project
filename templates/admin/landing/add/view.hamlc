@@ -1,0 +1,18 @@
+%form.form-horizontal
+  .form-body
+    .form-group{:style=>"margin-bottom: 4px;"}
+      %label.col-md-3.control-label Направление
+      .col-md-9
+        %select.form-control#direction{:name=>"direction"}
+    .form-group{:style=>"margin-bottom: 4px;"}
+      %label.col-md-3.control-label Код
+      .col-md-9
+        %input#city-select.form-control.col-md-8{:placeholder => 'Локация', :name => "location", :type => "text"}
+    .form-group{:style=>"margin-bottom: 4px;"}
+      %label.col-md-3.control-label Путь
+      .col-md-9
+        %input.form-control(type="text" name="url" placeholder="Путь")
+    .form-group{:style=>"margin-bottom: 4px;"}
+      %label.col-md-3.control-label Цена
+      .col-md-9
+        %input.form-control(type="text" name="price" placeholder="Цена")

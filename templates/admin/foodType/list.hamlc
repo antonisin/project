@@ -1,0 +1,12 @@
+%a#add.btn.green.dt-add
+  %i.fa.fa-plus-square
+
+%table#lidstable.table.table-striped.table-bordered.table-hover.table-full-width
+  %thead
+    %th Название
+    %th Код
+    %th Системное название
+
+    %th.text-center.one-button-cell
+      %i.fa.fa-gear
+  %tbody

@@ -1,0 +1,15 @@
+.hor-menu
+  %ul.nav.navbar-nav
+    %li
+      %a#send-offers(href='#')
+        %span.text-info
+          %i.fa.fa-envelope
+        Отправить предложения
+    %li
+      %a#create-sale.disabled(href='#')
+        %span.text-success
+          %i.fa.fa-dollar
+        Создать продажу
+.footer-tools
+  %span.go-top#go-top
+    %i.fa.fa-angle-up

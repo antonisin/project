@@ -1,0 +1,20 @@
+.row
+  .col-md-2.bold IP
+  .col-md-4
+    = @ip
+    %i#ip-info.fa.fa-question-circle.ttp(data-html="true" data-trigger="hover" data-title="#{@ip}" data-content="OS: #{@os}<br/>Browser: #{@browser}<br/>Device: #{@device}" style="color:#428bca;")
+  .col-md-2.bold Реферер
+  .col-md-4{ :style => "word-break: break-word;"}
+    - if @referer
+      %a(href=@referer)= @referer
+    - else
+      = "-"
+
+.row
+  .col-md-2.bold Запрос
+  .col-md-4= @keyword or '-'
+
+  .col-md-2.bold Промо
+  .col-md-4= @promo
+
+#hits

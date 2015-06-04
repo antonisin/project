@@ -1,0 +1,147 @@
+.well.text-center
+  .form-group
+    %label Быстрый поиск
+    %input.form-control{type: "text", name: "quickSearch"}
+.search_form
+  .form-group
+    %label Имя пассажира
+    %input.form-control{type: "text", data-filter-type: "name", name: "lastName"}
+  .form-group
+    %label Номер телефона
+    %input.form-control{type: "text", data-filter-type: "phone", name: "phone"}
+  .form-group
+    %label Класс
+    %select.form-control{id: "", name: "klass"}
+      %option{value: ""} -
+.search_form
+  .form-group
+    %label Фам. пассажира
+    %input.form-control{type: "text", data-filter-type: "name", name: "firstName"}
+  .form-group
+    %label Email клиента
+    %input.form-control{type: "text", data-filter-type: "email", name: "email"}
+  .form-group
+    %label Страховка
+    %select.form-control{id: "", name: "assurance"}
+      %option{value: ""} -
+.search_form
+  .form-group
+    %label Откуда летит
+    %input.form-control.input-160{:placeholder => 'Отправная локация', :name => "startLocation", type: "text"}
+  .form-group
+    %label Куда летит
+    %input.form-control.input-160{:placeholder => 'Конечная локация', :name => "endLocation", type: "text"}
+  .form-group
+    %label Статус
+    %select.form-control{id: "", name: "status"}
+      %option{value: ""} -
+.search_form
+  .form-group
+    %label Имя агента
+    %input.form-control.input-160{:placeholder => 'Имя агента', :name => "agentName", type: "text"}
+  .form-group
+    %label PNR или RL
+    %input.form-control.input-160{:placeholder => 'Код', :name => "pnr", type: "text"}
+  .form-group
+    %label Команда
+    %select.form-control{id: "", name: "team"}
+      %option{value: ""} ALL
+#search_detailed
+  .search_form
+    %label Продажа от:
+    .d_in_block.input-group.date.date-picker.createdFrom
+      %input.d_in_block.form-control{readonly: "readonly", type: "text", name: "createdFrom"}
+      %span.d_in_block.input-group-btn
+        %button.btn.default{type: "button"}
+          %i.fa.fa-calendar
+    .form-group
+      %span.fa.fa-caret-right
+    %label.datepicker_label Продажа до:
+    .d_in_block.input-group.date.date-picker.createdTill
+      %input.d_in_block.form-control{readonly: "readonly", type: "text", name: "createdTill"}
+      %span.d_in_block.input-group-btn
+        %button.btn.default{type: "button"}
+          %i.fa.fa-calendar
+    .form-group
+      %label Период
+      %select.form-control{id: "", name: "period"}
+        %option{value: ""} -
+        %option{value: "today"} сегодня
+        %option{value: "yesterday"} вчера
+        %option{value: "this-week"} на этой неделе
+        %option{value: "last-week"} на прошлой неделе
+        %option{value: "this-month"} в этом месяце
+        %option{value: "last-month"} в прошлом месяце
+        %option{value: "half-year"} полгода
+        %option{value: "year"} год
+
+  .search_form
+    %label Вылет с:
+    .d_in_block.input-group.date.date-picker.startFrom
+      %input.d_in_block.form-control{readonly: "readonly", type: "text", name: "startFrom" }
+      %span.d_in_block.input-group-btn
+        %button.btn.default{type: "button"}
+          %i.fa.fa-calendar
+    .form-group
+      %span.fa.fa-caret-right
+    %label.datepicker_label Вылет до:
+    .d_in_block.input-group.date.date-picker.startTill
+      %input.d_in_block.form-control{readonly: "readonly", type: "text", name: "startTill" }
+      %span.d_in_block.input-group-btn
+        %button.btn.default{type: "button"}
+          %i.fa.fa-calendar
+    .form-group
+      %label Маршрут
+      %select.form-control{id: "", name: "routeType"}
+        %option{value: ""} -
+        %option{value: "1"} Туда-обратно
+        %option{value: "2"} В одну сторону
+        %option{value: "3"} Сложный маршрут
+  .search_form
+    %label Возврат с:
+    .d_in_block.input-group.date.date-picker.endFrom
+      %input.d_in_block.form-control{readonly: "readonly", type: "text", name: "endFrom" }
+      %span.d_in_block.input-group-btn
+        %button.btn.default{type: "button"}
+          %i.fa.fa-calendar
+    .form-group
+      %span.fa.fa-caret-left
+    %label.datepicker_label Возврат до:
+    .d_in_block.input-group.date.date-picker.endTill
+      %input.d_in_block.form-control{readonly: "readonly", type: "text", name: "endTill" }
+      %span.d_in_block.input-group-btn
+        %button.btn.default{type: "button"}
+          %i.fa.fa-calendar
+  .search_form
+    .form-group
+      %label Номер билета:
+      %input.form-control.input-160{:placeholder => 'Номер билета', :name => "ticketNumber", type: "text"}
+    .form-group
+      %label ID Продажи
+      %input.form-control.input-160{:placeholder => 'ID', :name => "sale", type: "text"}
+    .form-group
+      %label Форма оплаты
+      %select.form-control{id: "", name: "paymentType"}
+        %option{value: ""} -
+        - for item in @paymenttypes
+          %option{value: item.id}= item.name
+  .search_form
+    .form-group
+      %label Фамилия на карте
+      %input.form-control{type: "text", data-filter-type: "name", name: "cardFirstName"}
+    .form-group
+      %label Имя на карте
+      %input.form-control{type: "text", data-filter-type: "name", name: "cardLastName"}
+  .search_form
+    .form-group
+      %label Номер кредитки
+      %input.form-control{type: "text", data-filter-type: "phone", name: "cardNumber"}
+    .form-group
+      %label Номер в форме
+      %input.form-control{type: "text", data-filter-type: "number", name: "clientPhoneNumber"}
+.t_center.search_z_button
+  %input.btn.btn-success{type: "submit", value: "Поиск"}
+  %button#advanced.btn.btn-success.ttp{type: "button", title: "Расширенный поиск"}
+    %i.fa.fa-chevron-down.change
+  %button.btn.btn-danger.ttp{type: "reset", title:"Сбросить фильтр"}
+    %i.glyphicon.glyphicon-remove

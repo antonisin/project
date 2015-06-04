@@ -1,0 +1,8 @@
+-#%a#add.btn.green.dt-add.adminAdd
+-#  %i.fa.fa-plus-square
+
+.progressBox.text-center.left.adminAdd
+  .crossBorder
+    %i.fa.fa-plus
+
+#items

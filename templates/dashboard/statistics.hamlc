@@ -1,0 +1,34 @@
+.portlet-title
+  .caption
+    %i.fa.fa-bar-chart-o
+    Статистика
+.portlet-body
+  .tabbable.portlet-tabs
+    %ul.nav.nav-tabs
+      %li.active
+        %a{"data-toggle" => "tab", href: "#year"} Год
+      %li
+        %a{"data-toggle" => "tab", href: "#month"} Месяц
+      %li
+        %a{"data-toggle" => "tab", href: "#week"} Неделя
+    .tab-content(style="margin-top:-10px !important")
+      #year.tab-pane.active.pos_relative.stat_content
+        .stat_header
+          #legend.stat_legend
+          .stat_number= "#{@stats.year.salesCount}/#{@stats.year.income}"
+          %div(style="clear:both;")
+        #chart-year.chart(style="height: 275px;")
+
+      #month.tab-pane.pos_relative.stat_content
+        .stat_header
+          #legend.stat_legend
+          .stat_number= "#{@stats.month.salesCount}/#{@stats.month.income}"
+          %div(style="clear:both;")
+        #chart-month.chart(style="height: 275px;")
+
+      #week.tab-pane.pos_relative.stat_content
+        .stat_header
+          #legend.stat_legend
+          .stat_number= "#{@stats.week.salesCount}/#{@stats.week.income}"
+          %div(style="clear:both;")
+        #chart-week.chart(style="height: 275px;")

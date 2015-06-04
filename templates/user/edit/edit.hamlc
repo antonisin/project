@@ -1,0 +1,36 @@
+.form-body
+  .form-group
+    %label.col-md-3.control-label *Имя
+    .col-md-9
+      %input.form-control(type="text" name="firstName")
+  .form-group
+    %label.col-md-3.control-label *Фамилия
+    .col-md-9
+      %input.form-control(type="text" name="lastName")
+  .form-group
+    %label.col-md-3.control-label *Email
+    .col-md-9
+      %input.form-control(type="text" name="email")
+  .form-group
+    %label.col-md-3.control-label Телефон
+    .col-md-9
+      %input.form-control(type="text" name="phone")
+  .form-group{:style=>"margin-bottom: 4px;"}
+    %label.col-md-3.control-label Доп. номер
+    .col-md-9
+      %input.form-control(type="text" name="addPhone" placeholder="Дополнительный номер")
+  .form-group
+    %label.col-md-3.control-label *Д.Р
+    .col-md-9
+      %input.form-control.date-picker(readonly= "readonly", placeholder="Дата", name="birthdayFormatted", type= "text")
+  .form-group
+    %label.col-md-3.control-label Картинка
+    .col-md-9
+      %span.right
+        %a.btn.btn-sm.red#remove-img
+          %i.fa.fa-times
+      %input.form-control#picture(type="file" name="picture")
+  .form-group
+    %label.col-md-3.control-label О себе
+    .col-md-9
+      %%textarea.form-control.input-large(type="text" name="about" style="resize: none;")

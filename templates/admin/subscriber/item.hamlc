@@ -1,0 +1,10 @@
+%td= @email
+%td= @datetime
+- if @isActive == 1 or @isActive == '1'
+  %td Активен
+- else 
+  %td Не Активен
+
+%td.actions-cell
+  %a#delete.btn.btn-sm.red
+    %i.fa.fa-trash-o

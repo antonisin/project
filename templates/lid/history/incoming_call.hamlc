@@ -1,0 +1,27 @@
+.lid
+  .clearfix.lid_top
+    .left
+      %span.label.label-warning
+        %i(class="fa fa-#{@historyTypeModel.icon}")
+        Исходящий звонок
+      %span.label.label-success(name = "order") Петров Иван
+      %span.label.label-default= @created
+    .right
+      %span.btn.btn-xs.green.minimize-activity(style="display:none;")
+        %i.fa.fa-minus
+      %span.btn.btn-xs.green.maximize-activity
+        %i.fa.fa-plus
+      %span.btn.btn-xs.blue.history-comment.pop{ data-content:"<textarea name='commentText' class='commentText form-control' style='resize: none;'>#{@commentText}</textarea><button class='btn btn-info add-comment'>Save</button>",data-html:"true",data-title: "Комментарии", data-toggle:"popover", data-placement:"top"}
+        %i.fa.fa-comment-o
+      .popover-content.hide
+        %textarea.form-control= @commentText
+    %table.full-activity.hide
+      %tr
+        %td.lid_air 56845784563
+        %td Call ID:
+          %span 324522
+        %td
+          %a(href="#") Прослушать
+        %td(href="#") Скачать
+        %td.lid_last.tright
+          .comments

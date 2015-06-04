@@ -1,0 +1,16 @@
+%form.form-inline.panel.panel-success.fine-form
+  .panel-heading
+    %h3.panel-title Добавить перевод
+  .panel-body
+    .form-body
+      .row
+        .col-md-6
+          %input.form-control{type: "text", name: "amount", placeholder: "Сумма перевода"}
+        .col-md-6
+          %input.form-control{type: "text", name: "agent", placeholder: "Неизвестныи"}
+      .row
+        .col-md-12
+          %textarea.form-control{name: "description", placeholder: "Описание", cols: "37", rows="3", style: "margin: 20px 0px;resize: none;"}
+      .row
+        .text-center
+          %button.btn.green.saveBtn{type: 'button'} Добавить перевод

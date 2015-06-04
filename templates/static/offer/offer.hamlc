@@ -1,0 +1,417 @@
+.e_wrap
+  %table.pad
+    %tr
+      %td
+        %a{:href => "#"}
+          %img{:alt => "", :src => "/bundles/fwair/images/offer/logo.jpg"}
+      %td.phone =@user.phone
+  %table.pad.t_hel
+    %tr
+      %td
+        .hel Здраствуйте, #{@lid.firstName} #{@lid.lastName}
+        #{@labels[@offers[@oid].label].name}
+        // {@offers[@oid]}
+        %p
+          Вы выбрали предложение №#{@oid} (#{@labels[@offers[@oid].label].name}) ipsum dolor sit amet, consectetur adipisicing elit. Ullam vitae dolorum, iure aperiam, ratione obcaecati architecto fuga libero adipisci officiis, expedita soluta sint aut atque amet nulla quae fugiat ad.
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, sed. Reiciendis voluptates sequi cupiditate, maxime facere praesentium esse repellat nisi earum, illo, eos ad inventore. A quis dignissimos, cumque iste.
+  %table.nopad
+    %tr
+      %td.blue_title.red_title
+        %table
+          %tr
+            %td.title_number 1.
+            %td Самое выгодное предложение
+  %table.cont.pad.cont_bord
+    %tr
+      %td
+        %table.cont_int
+          %tr
+            %td
+              .cont_logo
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/logo1.jpg"}
+              %br
+                .cont_logo
+                  %img{:alt => "", :src => "/bundles/fwair/images/offer/logo1.jpg"}
+            %td
+              %div
+                %strong
+                  %span
+                    %span.svo> SVO
+                    5:20
+                  %span.cont_font (15 авг)
+              .f11 Шеремьетево
+              %br
+                %div
+                  %strong
+                    %span
+                      %span.svo> SVO
+                      5:20
+                    %span.cont_font (15 авг)
+                .f11 Шеремьетево
+            %td.cont_int_g
+              .f11 2 часа 45 минут
+              %div
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/glob.jpg"}
+              .f11 Эконом
+              %br
+                .f11 2 часа 45 минут
+                %div
+                  %img{:alt => "", :src => "/bundles/fwair/images/offer/glob.jpg"}
+                .f11 Эконом
+            %td
+              %div
+                %strong
+                  %span
+                    %span.svo> SVO
+                    5:20
+                  %span.cont_font (15 авг)
+              .f11 Шеремьетево
+              %br
+                %div
+                  %strong
+                    %span
+                      %span.svo> SVO
+                      5:20
+                    %span.cont_font (15 авг)
+                .f11 Шеремьетево
+            %td
+              .price_svo 2464 руб
+              %button.btn_svo
+                Подробнее
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/btn_svo.png"}
+            %td
+              %img{:alt => "", :src => "/bundles/fwair/images/offer/check.jpg"}
+  %table.lamp
+    %tr
+      %td Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae sapiente consequatur ipsam eum rerum in nisi laborum, at sequi laboriosam adipisci ipsa eveniet blanditiis iure et consequuntur! Quam, soluta, praesentium?
+  %table.nopad.mt20
+    %tr
+      %td.blue_title
+        %table
+          %tr
+            %td.title_number 1.
+            %td Самое выгодное предложение
+  %table.cont.pad.cont_bord
+    %tr
+      %td
+        %table.cont_int
+          %tr
+            %td
+              .cont_logo
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/logo1.jpg"}
+              %br
+                .cont_logo
+                  %img{:alt => "", :src => "/bundles/fwair/images/offer/logo1.jpg"}
+            %td
+              %div
+                %strong
+                  %span
+                    %span.svo> SVO
+                    5:20
+                  %span.cont_font (15 авг)
+              .f11 Шеремьетево
+              %br
+                %div
+                  %strong
+                    %span
+                      %span.svo> SVO
+                      5:20
+                    %span.cont_font (15 авг)
+                .f11 Шеремьетево
+            %td.cont_int_g
+              .f11 2 часа 45 минут
+              %div
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/glob.jpg"}
+              .f11 Эконом
+              %br
+                .f11 2 часа 45 минут
+                %div
+                  %img{:alt => "", :src => "/bundles/fwair/images/offer/glob.jpg"}
+                .f11 Эконом
+            %td
+              %div
+                %strong
+                  %span
+                    %span.svo> SVO
+                    5:20
+                  %span.cont_font (15 авг)
+              .f11 Шеремьетево
+              %br
+                %div
+                  %strong
+                    %span
+                      %span.svo> SVO
+                      5:20
+                    %span.cont_font (15 авг)
+                .f11 Шеремьетево
+            %td
+              .price_svo 2464 руб
+              %button.btn_svo
+                Подробнее
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/btn_svo.png"}
+            %td.check
+              %input{:type => "checkbox"}
+  %table.nopad.mt20
+    %tr
+      %td.blue_title
+        %table
+          %tr
+            %td.title_number 1.
+            %td Самое выгодное предложение
+  %table.cont.pad.cont_bord
+    %tr
+      %td
+        %table.cont_int
+          %tr
+            %td
+              .cont_logo
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/logo1.jpg"}
+              %br
+                .cont_logo
+                  %img{:alt => "", :src => "/bundles/fwair/images/offer/logo1.jpg"}
+            %td
+              %div
+                %strong
+                  %span
+                    %span.svo> SVO
+                    5:20
+                  %span.cont_font (15 авг)
+              .f11 Шеремьетево
+              %br
+                %div
+                  %strong
+                    %span
+                      %span.svo> SVO
+                      5:20
+                    %span.cont_font (15 авг)
+                .f11 Шеремьетево
+            %td.cont_int_g
+              .f11 2 часа 45 минут
+              %div
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/glob.jpg"}
+              .f11 Эконом
+              %br
+                .f11 2 часа 45 минут
+                %div
+                  %img{:alt => "", :src => "/bundles/fwair/images/offer/glob.jpg"}
+                .f11 Эконом
+            %td
+              %div
+                %strong
+                  %span
+                    %span.svo> SVO
+                    5:20
+                  %span.cont_font (15 авг)
+              .f11 Шеремьетево
+              %br
+                %div
+                  %strong
+                    %span
+                      %span.svo> SVO
+                      5:20
+                    %span.cont_font (15 авг)
+                .f11 Шеремьетево
+            %td
+              .price_svo 2464 руб
+              %button.btn_svo
+                Подробнее
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/btn_svo.png"}
+            %td.check
+              %input{:type => "checkbox"}
+  %table.tb
+    %tr
+      %td
+        %textarea{:name => ""}
+      %td
+        %a.btn-orange{:href => "#"} Свяжитесь со мной!
+  %table.nopad
+    %tr
+      %td.blue_title.red_title
+        %table
+          %tr
+            %td.title_number 1.
+            %td title
+  %table.subtitle
+    %tr
+      %td
+        %img{:alt => "", :src => "/bundles/fwair/images/offer/air1.jpg"}
+      %td Lorem ipsum dolor sit amet, consectetur
+  %table.cont.pad
+    %tr
+      %td
+        %table.cont_int
+          %tr
+            %td
+              .cont_logo
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/logo1.jpg"}
+              %ul
+                %li lorem ipsum
+                %li lorem
+            %td
+              %div вылет
+              %div
+                %strong
+                  %span> 7 авг 5:20
+                  Москва
+              .f11 Шеремьетево
+              %ul
+                %li Терминал А
+            %td
+              .f11 2 часа 45 минут
+              %div
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/glob.jpg"}
+              .f11 Эконом
+              %ul
+                %li lorem ipsum
+            %td
+              %div вылет
+              %div
+                %strong
+                  %span> 7 авг 5:20
+                  Москва
+              .f11 Шеремьетево
+              %ul
+                %li Терминал А
+        %table.line_table
+          %tr
+            %td.w25
+            %td.line
+            %td
+              .line_g Время ожидания 56 часов
+            %td.line
+            %td.w25
+        %table.cont_int
+          %tr
+            %td
+              .cont_logo
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/logo1.jpg"}
+              %ul
+                %li lorem ipsum
+                %li lorem
+            %td
+              %div вылет
+              %div
+                %strong
+                  %span> 7 авг 5:20
+                  Москва
+              .f11 Шеремьетево
+              %ul
+                %li Терминал А
+            %td
+              .f11 2 часа 45 минут
+              %div
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/glob.jpg"}
+              .f11 Эконом
+              %ul
+                %li lorem ipsum
+            %td
+              %div вылет
+              %div
+                %strong
+                  %span> 7 авг 5:20
+                  Москва
+              .f11 Шеремьетево
+              %ul
+                %li Терминал А
+  %table.subtitle
+    %tr
+      %td Lorem ipsum dolor sit amet, consectetur
+      %td
+        %img{:alt => "", :src => "/bundles/fwair/images/offer/air2.jpg"}
+  %table.cont.pad.border_red
+    %tr
+      %td
+        %table.cont_int
+          %tr
+            %td
+              .cont_logo
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/logo1.jpg"}
+              %ul
+                %li lorem ipsum
+                %li lorem
+            %td
+              %div вылет
+              %div
+                %strong
+                  %span> 7 авг 5:20
+                  Москва
+              .f11 Шеремьетево
+              %ul
+                %li Терминал А
+            %td
+              .f11 2 часа 45 минут
+              %div
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/glob.jpg"}
+              .f11 Эконом
+              %ul
+                %li lorem ipsum
+            %td
+              %div вылет
+              %div
+                %strong
+                  %span> 7 авг 5:20
+                  Москва
+              .f11 Шеремьетево
+              %ul
+                %li Терминал А
+        %table.line_table
+          %tr
+            %td.w25
+            %td.line
+            %td
+              .line_g Время ожидания 56 часов
+            %td.line
+            %td.w25
+        %table.cont_int
+          %tr
+            %td
+              .cont_logo
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/logo1.jpg"}
+              %ul
+                %li lorem ipsum
+                %li lorem
+            %td
+              %div вылет
+              %div
+                %strong
+                  %span> 7 авг 5:20
+                  Москва
+              .f11 Шеремьетево
+              %ul
+                %li Терминал А
+            %td
+              .f11 2 часа 45 минут
+              %div
+                %img{:alt => "", :src => "/bundles/fwair/images/offer/glob.jpg"}
+              .f11 Эконом
+              %ul
+                %li lorem ipsum
+            %td
+              %div вылет
+              %div
+                %strong
+                  %span> 7 авг 5:20
+                  Москва
+              .f11 Шеремьетево
+              %ul
+                %li Терминал А
+  %table.nomar.itog
+    %tr
+      %td.tleft
+        %div
+          %strong
+            Итоговая стоимость перелета
+            %span 32456
+            рублей
+        %div
+          2X
+          %span 32456
+          (взрослые)
+        %div
+          2X
+          %span 32456
+          (взрослые)
+      %td
+        %img{:alt => "", :src => "/bundles/fwair/images/offer/arrow.jpg"}
+      %td
+        %button Свяжитесь со мной!

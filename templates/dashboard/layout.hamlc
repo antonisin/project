@@ -1,0 +1,9 @@
+#header
+.row
+  .col-md-12
+    .row
+      #statistics.col-md-6
+      #tasks.col-md-6
+        
+    .row
+      #race.col-md-6

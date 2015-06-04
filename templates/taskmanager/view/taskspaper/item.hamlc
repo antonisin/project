@@ -1,0 +1,11 @@
+.col-md-10.task{ :class => "#{'right' if @userId != window.data.user.id  } #{'bg-red' if @isDone == 1}", :isDone => "#{@isDone}" }
+  =@message
+  %i.fa.fa-comment.addComment{:style => "position: absolute; right: 8px; bottom: 8px; cursor: pointer;"}
+.col-md-2.date{ :class => "#{'right text-right' if @userId != window.data.user.id }" }
+  %span =@user
+  %span =@dateFormatted
+  %span =@timeFormatted
+- if @comments.length > 0
+  .col-md-12.toggleComments{:style => "font-size: 10px; font-style: italic; cursor: pointer;"}
+    .showComments.hide \- - - - Show Comments - - - -
+    .hideComments \- - - - Hide Comments - - - -

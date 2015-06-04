@@ -1,0 +1,9 @@
+%td= @firstName
+%td= @lastName
+%td= @email
+%td.actions-cell
+  .btn-group
+    %a#view.btn.btn-sm.blue
+      %i.fa.fa-arrow-circle-right
+    %a#delete.btn.btn-sm.red
+      %i.fa.fa-trash-o

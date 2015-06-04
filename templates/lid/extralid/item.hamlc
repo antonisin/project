@@ -1,0 +1,26 @@
+.clearfix
+  .contact_title(style="margin-bottom:0px;font-style: italic; margin-top: 10px;")
+    %span ='Контактное лицо'
+    %span(name = "extraId" )
+    %button#destroy(style="background: none; border: none;")
+      %span.glyphicon.glyphicon-remove(style= "font-size:13px; color: #d9534f;") 
+.clearfix
+  .form-inline(style="clear:right; margin-bottom: 2px;")
+    %input.form-control{:placeholder => 'Имя', :type => "text", :name=> "extraFirstName", :style => "margin-right:6px;"}
+    %input.form-control{:placeholder => 'Фамилия', :type => "email", :name=> "extraLastName", :style => "margin-right: 2px;"}
+    %div.btn-group.right(data-toggle="buttons", style="font-style: normal; margin-left: 4px;")
+      %button.btn.btn-default.SexBtn
+        %span.SexLabelDefault
+          %input.toggle.label(name="extraSex", type="radio", value=1) М
+      %button.btn.btn-default.SexBtn
+        %span.SexLabelDefault
+          %input.toggle.label(name="extraSex", type="radio", value=2) Ж
+  .form-inline
+    %input.max_float_input.form-control{:placeholder => 'Телефон', :type => "text", :name=> "extraPhone"}
+    %button.btn.btn-success.btn-default#globalExtraCall{:style => "margin-right: 5px;"}
+      %span.fa.fa-phone
+    %input.form-control{:placeholder => 'Email', :type => "email", :name=> "extraEmail"}
+      %button.btn.btn-success.btn-default.checkEmail{:style => "margin-left: -4px;"}
+        %span.fa.fa-refresh
+        /%button.btn.btn-info.btn-default
+        /%span.glyphicon.glyphicon-plus

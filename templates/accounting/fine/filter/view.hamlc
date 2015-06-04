@@ -1,0 +1,64 @@
+%form.form-inline.panel.panel-info.search-form.top-labels
+  .panel-heading
+    .row
+      .col-md-2
+        %h3.panel-title{style: 'margin-top: 7px;'} Поиск
+      .col-md-10.text-right
+        %div{data-toggle: 'buttons'}
+          %label.btn.btn-default.active
+            %span
+              %input.toggle.label{type: 'radio', name: 'type', value: 'sale',  style: "display: none"} Штрафы за HX/ADM
+          %label.btn.btn-default
+            %span
+              %input.toggle.label{type: 'radio', name: 'type', value: 'disciplinary', style: "display: none"} Дисциплинарные штрафы
+  .panel-body
+    .form-body
+      %form
+        .row
+          .col-md-5.col-md-offset-1
+            .text-center
+              %label{for: "agent"} Имя агента
+              %input#agent.form-control{:placeholder => "Имя агента", :name => "agent", :type => "text", :value => ""}
+          .col-md-5.col-md-offset-1
+            .form-group.text-center
+              %label{for: "team"} Команда
+              %select.form-control{name: "team", title: "Команда"}
+                %option All
+                %option Marvel
+        .row.mt20#search_detailed
+          .col-md-4
+            .text-center
+              %label Штраф создан с:
+              .input-group.date.date-picker.createdFrom
+                %input.form-control{readonly: "readonly", type: "text", name: "createdFrom"}
+                %span.input-group-btn
+                  %button.btn.default{type: "button"}
+                    %i.fa.fa-calendar
+          .col-md-4
+            .text-center
+              %label Штраф создан до:
+              .input-group.date.date-picker.createdTill
+                %input.form-control{readonly: "readonly", type: "text", name: "createdTill"}
+                %span.input-group-btn
+                  %button.btn.default{type: "button"}
+                    %i.fa.fa-calendar
+          .col-md-4
+            .text-center
+              %label Период
+              %select.form-control{id: "", name: "period"}
+                %option{value: ""} -
+                %option{value: "today"} сегодня
+                %option{value: "yesterday"} вчера
+                %option{value: "this-week"} на этой неделе
+                %option{value: "last-week"} на прошлой неделе
+                %option{value: "this-month"} в этом месяце
+                %option{value: "last-month"} в прошлом месяце
+                %option{value: "half-year"} полгода
+                %option{value: "year"} год
+        .text-center
+          .btn-group.text-center
+            %button#reset.btn.red.ttp{type: "reset", title: "Сброс"}
+              %i.fa.fa-times
+            %button#advanced.btn.btn-success.ttp{type: "button", title: "Расширенный поиск"}
+              %i.fa.fa-chevron-down.change
+            %button.btn.blue.saveBtn{type: 'submit'} Поиск

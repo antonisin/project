@@ -1,0 +1,16 @@
+.row
+  .col-md-12
+    %h1.text-center{:style => "margin: 0 0 13px 0px;"} Схемы
+.row
+  .col-md-12
+    %a#add.btn.green.dt-add
+      %i.fa.fa-plus-square
+    %table#scheme_table.scheme.table.table-striped.table-bordered.table-hover.table-full-width.table-interactive
+      %thead
+        %th №
+        %th Имя
+        %th Конверсия до
+        %th Конверсия больше
+        %th.text-center
+          %i.fa.fa-gear
+      %tbody

@@ -1,0 +1,36 @@
+%td
+  %div{ :style=> "overflow: hidden; width: 57px; height:14px; text-overflow: ellipsis;"}=@id
+%td
+  =@userModel.firstName
+  =@userModel.lastName
+%td #{(@income).toFixed(2)}
+%td #{(@salary).toFixed(2)}
+%td #{(@percent).toFixed(2)}%
+%td #{(@bonus).toFixed(2)} / 0$
+%td=@salesCount + ' / ' + @lids
+%td #{(@conversion).toFixed(2)}%
+%td #{(@gp).toFixed(2)}
+%td=@comment
+%td.actions-cell
+  .btn-group
+    - if @status is 1
+      %span.ttp{:data-original-title => "Подтверждено"}
+        %i.fa.fa-check.fa-lg
+    - else if @status is 2
+      %span.ttp{:data-original-title => "Выплачено"}
+        %i.fa.fa-dollar.fa-lg
+    - else
+      %span.ttp{:data-original-title => "Ожидание"}
+        %i.fa.fa-question.fa-lg
+%td=@team
+%td.actions-cell
+  .btn-group
+    %a#view.btn.btn-sm.blue{:style => "padding: 2px 7px 3px 7px;"}
+      %i.fa.fa-arrow-circle-right
+    %a#download.btn.btn-sm.blue{:style => "padding: 2px 7px 3px 7px;"}
+      %i.fa.fa-download
+    %a#print.btn.btn-sm.blue{:style => "padding: 2px 7px 3px 7px;"}
+      %i.fa.fa-print
+    %a#mail.btn.btn-sm.blue{:style => "padding: 2px 7px 3px 7px;"}
+      %i.fa.fa-envelope
+

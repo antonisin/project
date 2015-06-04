@@ -1,0 +1,20 @@
+.modal-header
+  %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+  %h4.modal-title= @title
+.modal-body
+.modal-footer
+  - if @buttons['save']
+    %button.#save.btn.btn-primary{type: "button"} OK
+
+  - if @buttons['close']
+    %button.#close.btn.btn-default{"data-dismiss" => "modal", type: "button"} Закрыть 
+
+  - if @buttons['yes']
+    %button.#yes.btn.btn-primary{"data-dismiss" => "modal", type: "button", "autofocus"=>"autofocus"}  
+      %i.fa.fa-check
+      Да
+
+  - if @buttons['no']
+    %button.#no.btn.btn-default{"data-dismiss" => "modal", type: "button"} 
+      %i.fa.fa-times
+      Нет

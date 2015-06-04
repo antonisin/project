@@ -1,0 +1,19 @@
+%form.form-horizontal
+  .form-body
+    .row
+      .form-group
+        .col-md-12
+          %input.form-control{:type => "text", :name => "name"}
+    .row
+      .form-group
+        .col-md-12
+          %textarea.form-control{:name => "comment", :style => "resize:none;"}
+    .row
+      .form-group
+        .col-md-12
+          %input.form-control#picture{:type => "file", :name => "image"}
+    .row
+      %div{:style => "margin-left: -15px; margin-right: -15px; margin-bottom: -15px;"}
+        #types.col-md-4
+        #ranges.col-md-4
+        #values.col-md-4

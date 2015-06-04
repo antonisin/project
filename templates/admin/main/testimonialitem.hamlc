@@ -1,0 +1,8 @@
+%td{ :style => "background:#fff" }= @name
+%td.testimonial-text{ :style => "background:#fff; word-break: break-all;" }= @text
+%td{ :style => "background:#fff" }= @startLocationModel.code
+%td{ :style => "background:#fff" }= @endLocationModel.code
+
+%td.actions-cell{ :style => "background:#fff" }
+  %a#delete.btn.btn-sm.red
+    %i.fa.fa-trash-o

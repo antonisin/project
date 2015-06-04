@@ -1,0 +1,7 @@
+.form-group
+  %label.col-md-3.control-label Аэропорты
+  .col-md-9
+    %ul.location-airports
+      / %li
+      /   %a.btn.green
+      /     %i.fa.fa-plus

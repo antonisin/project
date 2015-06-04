@@ -1,0 +1,12 @@
+%thead
+  %tr
+    %th(style="font-size:12px") Отправление
+    %th(style="font-size:12px") Прибытие
+    %th(style="font-size:12px") Кол-во людей
+    %th(style="font-size:12px") Статус
+    %th(style="font-size:12px") Предложений
+    %th(style="font-size:12px") Создано
+    %th(style="font-size:12px") Изменён
+    %th.text-center#sorting-off(style="font-size:12px")
+      %i.fa.fa-gear
+%tbody

@@ -1,0 +1,5 @@
+.footer-inner
+  %span#copyright
+.footer-tools
+  %span.go-top#go-top
+    %i.fa.fa-angle-up

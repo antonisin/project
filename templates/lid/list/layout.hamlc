@@ -1,0 +1,9 @@
+.row
+  .col-md-12
+    %a#add.btn.blue.dt-search.top{:style=>"margin-right: 0px; width: 40px; display:none;"}
+      %i.fa.fa-search
+  #filter.form_wrap.search_area{ :style => "display:none;"}
+  #list.col-md-12
+
+.row
+  #history

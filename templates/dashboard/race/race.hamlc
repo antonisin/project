@@ -1,0 +1,8 @@
+%thead
+  %tr
+    %th
+      %span.badge.badge-info
+    %th
+      Имя
+    %th Ext
+%tbody

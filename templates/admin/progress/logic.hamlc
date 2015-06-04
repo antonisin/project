@@ -1,0 +1,18 @@
+- if typeof @array == 'object'
+  %select.form-control{:name => "#{@field}"}
+    %option -
+    - for item, index in @array
+      %option{:value => "#{index}"}
+        - if typeof item.name == 'string'
+          #{item.name}
+        - else
+          #{item}
+
+- if @array == 'counter'
+  %input.form-control#{:type => "number", :name => "#{@field}"}
+
+- if @array == 'none'
+  %input.form-control.hide{:name => "#{@field}"}
+
+- if typeof @array != 'object' and typeof @array != 'string'
+  %input.form-control.hide{:name => "#{@field}"}

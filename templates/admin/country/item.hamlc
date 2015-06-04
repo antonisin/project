@@ -1,0 +1,6 @@
+%td= @name
+%td= "#{if @code2 then @code2 else '-'} / #{if @code3 then @code3 else '-'}"
+
+%td.actions-cell
+  %a#delete.btn.btn-sm.red
+    %i.fa.fa-trash-o

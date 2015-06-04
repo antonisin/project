@@ -1,0 +1,8 @@
+= "#{@firstName} #{@lastName}"
+.btn-group.right
+  %a#profile.btn.btn-xs.blue{:href =>"#profile/"+@id }
+    %i.fa.fa-user
+  %a.btn.btn-xs.green
+    %i.fa.fa-envelope
+  %a#close.btn.btn-xs.red
+    %i.fa.fa-times

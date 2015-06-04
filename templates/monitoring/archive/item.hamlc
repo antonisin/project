@@ -1,0 +1,29 @@
+%td.text-center
+  - if @disposition == 'ANSWERED'
+    %i.fa.fa-phone.text-success
+  - else if @disposition == 'BUSY'
+    %i.fa.fa-minus-circle.red
+  - else if @disposition == 'NO ANSWER'
+    %i.fa.fa-phone.text-success.red
+  - else
+    #{@disposition}
+%td{:style => "text-align:center; line-height:11px;"}
+  #{@startDateFormated}
+  %br
+  #{@startTimeFormated}
+%td{:style => "text-align:center; line-height:11px;"}
+  #{@endDateFormated}
+  %br
+  #{@endTimeFormated}
+%td #{@dst}
+%td #{@src}
+%td
+  %audio{:src => "../../simple.mp3", :preload => "none"}
+%td#tag
+  = @tag
+%td#comment.commentOverflowHidden
+  %div #{@comment}
+/ %td{:style => "line-height:11px;"}
+  / #{@channel}
+  / %br
+  / #{@dstchannel}

@@ -1,0 +1,43 @@
+-#.portlet.box.blue.tabbable.message_tab
+-#  .portlet-title
+-#    .caption
+-#      %a.btn.yellow{href: "#"}
+-#        %i.fa.fa-plus
+-#      %button.btn.dark{type: "button"} Новые сообщения
+-#  .portlet-body
+-#    .portlet-tabs
+-#      %ul.nav.nav-tabs
+-#        %li.active
+-#          %a{"data-toggle" => "tab", href: "#portlet_tab_1"}
+-#            Сегодня
+-#        %li
+-#          %a{"data-toggle" => "tab", href: "#portlet_tab_2"}
+-#            Неделя
+-#        %li
+-#          %a{"data-toggle" => "tab", href: "#portlet_tab_3"}
+-#            Месяц
+-#        %li
+-#          %a{"data-toggle" => "tab", href: "#portlet_tab_4"}
+-#            Все
+-#        %li
+-#          %a{"data-toggle" => "tab", href: "#portlet_tab_5"}
+-#            Черновик
+-#      .tab-content
+-#        #portlet_tab_1.tab-pane.active
+-#          %table.table.table-striped.table-bordered.table-advance.table-hover
+-#            %thead
+-#              %tr
+-#                %th
+-#                %th Время
+-#                %th.hidden-xs Клиент
+-#                %th Комментарии
+-#                %th
+-#            %tbody
+-#        #portlet_tab_2.tab-pane
+-#          2
+-#        #portlet_tab_3.tab-pane
+-#          3
+-#        #portlet_tab_4.tab-pane
+-#          4
+-#        #portlet_tab_5.tab-pane
+-#          5

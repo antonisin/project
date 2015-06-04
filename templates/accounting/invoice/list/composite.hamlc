@@ -1,0 +1,20 @@
+%table#invoices_table.invoices.table.table-striped.table-bordered.table-hover.table-full-width.table-interactive
+  %thead
+    %th №
+    %th.text-center
+      %i.fa.fa-user
+    %th Доход
+    %th ЗП
+    %th %
+    %th Бонус/Штраф
+    %th Продажи/Лидов
+    %th Конверсия
+    %th GP/Lead
+    %th.text-center
+      %i.fa.fa-comment
+    %th.text-center
+      %i.fa.fa-check
+    %th Команда
+    %th.text-center
+      %i.fa.fa-gear
+  %tbody

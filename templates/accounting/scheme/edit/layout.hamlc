@@ -1,0 +1,21 @@
+.row
+  .col-md-12
+    %table#scheme-edit.table.table-striped.table-bordered.table-hover.table-full-width
+      %thead
+        %tr
+          %th{:colspan => "2"}
+            Доход/Лид
+          %th{:colspan => "3"}
+            Конверсия
+          %th{:rowspan => "2"}
+            %i.fa.fa-gear
+        %tr
+          %th
+            От
+          %th
+            До
+          - if @conversions
+            - for item,j in @conversions
+              %th
+                %input{:name => "conversion" + j}
+      %tbody

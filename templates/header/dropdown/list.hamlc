@@ -1,0 +1,5 @@
+%a.dropdown-toggle#tips(href="#" )
+  %i.fa.fa-warning
+  %span.badge#badge{:name => 'taskCounter'}
+%ul.dropdown-menu.drop-menu-scroll.extended.inbox
+  #dropdown

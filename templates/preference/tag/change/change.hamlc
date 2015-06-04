@@ -1,0 +1,17 @@
+.col-md-12
+  .form-body
+    .form-group{:style => "margin: 0 0 22px 0; height: 34px;"}
+      %label.col-md-1.control-label{:style => "margin-top: 8px;"} Имя
+      .col-md-11
+        %input.form-control{:type => "text", :name => "name"}
+    .form-group
+      .col-md-11.col-md-offset-1
+        %input{:type => "checkbox", :name => 'inList'} Показывать в списке.
+    .form-group
+      .col-md-11.col-md-offset-1
+        %input{:type => "checkbox", :name => 'showCounter'} Показывать количество задач.
+    .form-group
+      .col-md-12.iconsBlock.text-muted{:style => "position: relative; margin: 16px 0 0 0;"}
+        %div
+          - for icon in window.data.icons
+            %i.fa{:class => "#{icon}"  + if @icon == icon then " active" else "" }

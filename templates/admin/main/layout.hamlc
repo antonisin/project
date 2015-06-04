@@ -1,0 +1,5 @@
+#slider{:style => "padding-bottom:20px;"}
+%hr
+#travel{:style => "padding-bottom:20px;"}
+%hr
+#testimonial{:style => "padding-bottom:20px;"}

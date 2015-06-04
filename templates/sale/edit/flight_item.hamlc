@@ -1,0 +1,49 @@
+.pnr_val_left
+  .pnr_val_left_1
+    .form-inline.mt10
+      .form-group
+        %div.ttp(title="Отправная локация")
+          %input#startLocation.ttp.form-control.input-xsmall.location{:placeholder => 'Код', :name => "startLocation", :type => "text"}
+      .form-group
+        .input-group.date.form_datetime.date-picker.startD
+          %input.ttp.form-control(type="text" readonly="" name="startDate" title="Дата Вылета")
+          %span.input-group-btn
+            %button.btn.default.date-set(type="button")
+              %i.fa.fa-calendar
+      .form-group
+        .input-group.form_time
+          %input.ttp.form-control.timepicker.timepicker-no-seconds(type="text" ondragstart="return false;"  name="startTime" title="Время Вылета")
+          %span.input-group-btn
+            %button.btn.default(type="button")
+              %i.fa.fa-clock-o
+  .pnr_val_lef_sep
+    .pnr_val_lef_mid
+      %span.span1.glyphicon.glyphicon-circle-arrow-right
+  .pnr_val_left_1
+    .form-inline.mt10
+      .form-group
+        %div.ttp(title="Конечная Локация")
+          %input#endLocation.ttp.form-control.input-xsmall.location{:placeholder => 'Код', :name => "endLocation", :type => "text"}
+      .form-group
+        .input-group.date.form_datetime.date-picker.endD
+          %input.ttp.form-control(type="text" readonly="" name="endDate" title="Дата Прилёта")
+          %span.input-group-btn
+            %button.btn.default.date-set(type="button")
+              %i.fa.fa-calendar
+      .form-group
+        .input-group.form_time
+          %input.form-control.ttp.timepicker.timepicker-no-seconds(type="text" ondragstart="return false;"  name="endTime" title="Время Прилёта")
+          %span.input-group-btn
+            %button.btn.default(type="button")
+              %i.fa.fa-clock-o
+.pnr_val_right
+  .form-inline.mt10
+    .form-group.ttp(title="Авиакомпания")
+      %input#airline.ttp.form-control.input-xxsmall.small{:placeholder => 'Код', :type => "text", :name => "airline"}
+    %input.ttp.form-control.medium(type="text" name="name" title="Номер рейса")
+    %input.ttp.form-control.big(type="text" name="reservationCode" title="Код резервации")
+    %select.eco-sel.form-control(name="" style="margin:0; padding:0;")
+      %option Econom
+    %div(style="position:absolute;margin-top:20px;display:inline-block;")
+      %button#delete.btn.btn-sm.red.del-butt
+        %i.fa.fa-times.fa-fw

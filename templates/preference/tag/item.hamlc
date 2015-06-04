@@ -1,0 +1,9 @@
+%td.text-center #{@indexOf}
+%td.text-center
+  %i.fa.pictogram{:class => "#{@icon}"}
+%td #{@name}
+%td
+  %a#delete.btn.btn-sm.red{:class => 'disabled' if parseInt(@isSystem) == 1 }
+    %i.fa.fa-times
+  %a#edit.btn.btn-sm.green{:class => 'disabled' if parseInt(@isSystem) == 1 }
+    %i.fa.fa-pencil

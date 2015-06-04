@@ -1,0 +1,6 @@
+.form-group
+  .col-md-12
+    %h5{:type => "text", :name => "message", :style => "resize: none;"} Введите причину по которой вы хотите закрыть задачу:
+.form-group{:style => "margin: 0 0 22px 0; height: 34px;"}
+  .col-md-12
+    %textarea.form-control{:type => "text", :name => "message", :style => "resize: none;"}

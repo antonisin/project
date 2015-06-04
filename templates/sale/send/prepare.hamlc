@@ -1,0 +1,18 @@
+.alert.alert-block.alert-success
+  %h4.alert-heading
+    %i.fa.fa-check-circle
+    Всё готово!
+  %p
+    Перед отправкой
+    %a#offer-url{target: "_blank"}
+      %i.fa.fa-external-link
+      посмотрите предварительную версию письма
+    (откроется в новом окне)
+
+  %hr
+  %h4 Выберите имейл(ы) для отправки:
+    %button.btn.btn-xs.green.addEmail
+      %i.fa.fa-plus-square
+  %form.form-horizontal
+    #emails.checkbox-list
+    #otherEmail

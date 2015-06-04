@@ -1,0 +1,21 @@
+%li.dropdown#dropdown-menu
+%li.dropdown.user
+  %a.dropdown-toggle(data-close-others="true" data-hover="dropdown" data-toggle="dropdown" href="#")
+    %img(alt="" src="/bundles/fwmetronic/img/avatar1_small.jpg")
+    %span.username
+      = "#{@firstName} #{@lastName}"
+    %i.fa.fa-angle-down
+  %ul.dropdown-menu
+    %li
+      %a#profile(href="#")
+        %i.fa.fa-user
+        Мой профиль
+    %li
+      %a#trigger_fullscreen(href="#")
+        %i.fa.fa-move
+        На весь экран
+    %li
+      %a#logout(href="#")
+        %i.fa.fa-lock
+        Выйти
+

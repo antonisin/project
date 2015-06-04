@@ -1,0 +1,15 @@
+.item-header
+  .pnr_val_left
+    .pnr_val_left_1
+      %span.title Вылет
+        %img(src= "/bundles/fwair/images/airplane1.png" alt="")
+    .pnr_val_lef_sep
+      .pnr_val_lef_mid
+    .pnr_val_left_1
+      %span.title Прилет
+        %img(src= "/bundles/fwair/images/airplane2.png" alt="")
+  .pnr_val_right
+    .form-group.pnr_val_right_form_group
+      %input.ttp.form-control#big-top(type="text" disabled title="Код резервации" name="reservationCode")
+      %button#add-flight.btn.btn-success.disabled(type="button") Добавить
+#items

@@ -1,0 +1,8 @@
+.container
+  .row
+    %h3.page-title Панель администратора
+  .row
+    #menu.col-md-3
+    .col-md-9
+      #adminTitle
+      #list

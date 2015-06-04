@@ -1,0 +1,7 @@
+.alert.alert-block.alert-danger.alert-dismissible(role="alert")
+  %button.close(type="button" data-dismiss="alert")
+   	%span(aria-hidden="true")
+  %h4.alert-heading 
+    %i.fa.fa-times-circle
+    Ошибка валидации
+  %p#errors

@@ -1,0 +1,14 @@
+%a#add.btn.green.dt-add
+  %i.fa.fa-plus-square
+%table#lidstable.table.table-striped.table-bordered.table-hover.table-full-width
+  %thead
+    %th Город
+    %th Код
+    %th Путь
+    %th Направление
+    %th Откуда
+    %th Цена
+    %th Статус
+    %th.text-center.one-button-cell
+      %i.fa.fa-gear
+  %tbody

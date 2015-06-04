@@ -1,0 +1,39 @@
+.contact_area_dashed.clearfix
+  .contact_title
+    %span ='Landing Item #'
+    %span{:name=>"itemId"}
+    %button#destroy(style="background: none; border: none;")
+      %span.glyphicon.glyphicon-remove(style= "font-size:13px; color: #d9534f;") 
+  .col-md-12.text-center  
+    .col-md-6
+      %span Airline
+    .col-md-6
+      %span Price
+  .col-md-12{:style=>"margin-bottom: -12px;"}
+    .col-md-6.form-group
+      %input.form-control.airline#airline1-select{:placeholder => 'Airline',  :name=> "airline1"} 
+    .col-md-6.form-group
+      %input.form-control{:placeholder => 'Price',  :name=> "price1", :maxlength=>8}
+  .col-md-12{:style=>"margin-bottom: -12px;"}  
+    .col-md-6.form-group
+      %input.form-control.airline#airline2-select{:placeholder => 'Airline',  :name=> "airline2"} 
+    .col-md-6.form-group
+      %input.form-control{:placeholder => 'Price',  :name=> "price2", :maxlength=>8}
+  .col-md-12{:style=>"margin-bottom: -12px;"}
+    .col-md-6.form-group
+      %input.form-control.airline#airline3-select{:placeholder => 'Airline',  :name=> "airline3"} 
+    .col-md-6.form-group
+      %input.form-control{:placeholder => 'Price',  :name=> "price3", :maxlength=>8}
+  .col-md-12{:style=>"margin-bottom: -12px;"}
+    %hr{:style=>"margin: 6px 0 ;"}    
+    .col-md-6.form-group
+      %input.form-control.airline#airline4-select{:placeholder => 'Airline',  :name=> "airline4"} 
+    .col-md-6.form-group
+      %input.form-control{:placeholder => 'Price',  :name=> "price4", :maxlength=>8}
+  .col-md-12
+    %hr{:style=>"margin: 6px 0 ;"}
+    .col-md-4.form-group.col-md-offset-2
+      %input.form-control#location-select{:placeholder => 'Location',  :name=> "location"} 
+    .col-md-4.form-group
+      %input.#landinglocation-select.form-control{:placeholder => 'landinglocation',  :name=> "landinglocation", :disabled=>"disabled"}
+

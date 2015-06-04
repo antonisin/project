@@ -1,0 +1,19 @@
+.row
+  .col-md-10.col-md-offset-1
+    %h2.text-center
+      #{@userModel.firstName} #{@userModel.lastName}
+  .col-md-1
+    - if @status == 0
+      %i.fa.fa-circle-o.text-primary{:style => "margin-top: 34px; font-size:40px;"}
+    - if @status == 1
+      %i.fa.fa-envelope.text-info{:style => "margin-top: 34px; font-size:40px;"}
+    - if @status == 2
+      %i.fa.fa-exclamation.text-danger{:style => "margin-top: 34px; font-size:40px;"}
+    - if @status == 3
+      %i.fa.fa-check.text-success{:style => "margin-top: 34px; font-size:40px;"}
+.row
+  .col-md-10.col-md-offset-1
+    Инвойс за период с
+    #{moment(this.created.date, 'YYYY-MM-DD HH:mm:SSS').format('DD/MM/YYYY')}
+    по
+    #{moment(this.created.date, 'YYYY-MM-DD HH:mm:SSS').add(1, 'months').format('DD/MM/YYYY')}

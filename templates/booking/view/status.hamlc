@@ -1,0 +1,6 @@
+.speedbar.clearfix
+  #item1.speedbar_item Заказ получен
+  #item2.speedbar_item Предложения созданы
+  #item3.speedbar_item.long Предложения отправлены
+  #item4.speedbar_item Инвойс отправлен
+  #item5.speedbar_item Билеты отправлены

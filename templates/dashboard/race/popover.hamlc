@@ -1,0 +1,21 @@
+.row
+  .col-md-4{ :style => "padding: 0px 6px"}
+    %a.thumbnail
+      - if @picture != ''
+        %img{:src=>'/images/upload/' + @picture, :style=>"max-height: 200px"}
+      - if @picture == ''
+        %img{:src=>'/images/unknown.gif' , :style=>"max-height: 200px"}
+  .col-md-8{ :style => "padding: 0px 6px;word-break: break-all;"}
+    %table.user-popover
+      %tr
+        %th 
+          %i.fa.fa-user
+        %td= @firstName
+      %tr
+        %th 
+          %i.fa.fa-clock-o
+        %td= @registeredFormatted
+      %tr
+        %th 
+          %i.fa.fa-envelope
+        %td= @email

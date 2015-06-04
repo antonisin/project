@@ -1,0 +1,19 @@
+%h4.text-center Штрафы за HX-сы и ADM
+%table#fineTable.table.table-striped.table-bordered.table-hover.table-full-width
+  %thead
+    %th #
+    %th Дата
+    %th PNR
+    %th Статус
+    %th Сумма
+    %th.text-center
+      %input#selectAll{type: "checkbox"}
+  %tbody
+- if !@disabled
+  .btn-group.col-md-offset-4
+    %button.btn.green#confirmFines
+      %i.fa.fa-check
+      Подтвердить
+    %button.btn.red#rejectFines
+      %i.fa.fa-times
+      Отклонить

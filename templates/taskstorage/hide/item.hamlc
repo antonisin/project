@@ -1,0 +1,24 @@
+
+%form.form-horizontal
+  .form-body
+    .hideBlock
+      .form-group
+        %h5{:type => "text", :name => "message", :style => "resize: none;"} Введите причину по которой вы хотите перевести задачу:
+      .form-group
+        %textarea.form-control{:type => "text", :name =>"message", :placeholder => "Текст", :style => "resize: none;"}
+      .form-group
+        %select.form-control{:name => "category"}
+          - for category in window.data.taskCategories
+            - if parseInt(category.inList) is 1
+              %option{:value => "#{category.id}"}  #{category.name}
+      .form-group
+        .input-group.date.date-picker.col-md-6{:style=>"float:left;"}
+          %input.form-control{:type => "text" ,:name => "date", :readonly => "readonly", :placeholder => "Дата"}
+          %span.input-group-btn
+            %button.btn.default.date-set
+              %i.fa.fa-calendar
+        .input-group.form_time.col-md-6
+          %input.form-control.timepicker{:type => "text", :ondragstart  => "return false;",  :name => "time"}
+            %span.input-group-btn
+              %button.btn.default{:type => "button"}
+                %i.fa.fa-clock-o

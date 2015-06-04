@@ -1,0 +1,6 @@
+%form.form-horizontal
+  .form-body
+    .form-group{:style=>"margin-bottom: 4px;"}
+      %label.col-md-3.control-label Комментарий
+      .col-md-9
+        %textarea.form-control(type="text" name="message" placeholder="Комментарий" style="resize:none;")

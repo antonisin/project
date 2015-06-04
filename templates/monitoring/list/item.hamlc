@@ -1,0 +1,33 @@
+%td #{@order}
+- if @user
+  %td #{@user.firstName} #{@user.lastName}
+- else
+  %td
+%td 222
+%td #{@priority}
+- if @user
+  %td #{@lidsCount}
+- else
+  %td 0
+%td #{@income}
+- if @user
+  %td #{@user.exp}
+- else
+  %td
+%td #{@limit}
+%td #{@lineTime}
+%td.direction.text-center
+  %i.fa{ :class => "#{ if @direction == 'out' then 'fa-arrow-circle-o-right' else 'fa-arrow-circle-o-down' }" }
+%td.client #{@exten}
+%td.text-center{:style => "width: 140px;"}
+  .btn-group
+    %a#archive.btn.btn-sm.blue{:style => "margin-right:2px;padding: 1px 6px 1px 6px;"}
+      %i.fa.fa-th-large
+    %a#listen.btn.btn-sm.green{:style => "margin-right:2px;padding: 1px 6px 1px 6px;"}
+      %i.fa.fa-headphones
+    %a#whisper.btn.btn-sm.green{:style => "margin-right:2px;padding: 1px 6px 1px 6px;"}
+      %i.fa.fa-microphone
+    %a#barge.btn.btn-sm.green{:style => "margin-right:2px;padding: 1px 6px 1px 6px;"}
+      %i.fa.fa-users
+    %a#hangup.btn.btn-sm.red{:style => "margin-right:2px;padding: 1px 6px 1px 6px;"}
+      %i.fa.fa-stop

@@ -1,0 +1,9 @@
+%form.form-horizontal
+  .form-body
+    .row
+      %label.col-md-2.control-label Текст
+      .col-md-5
+        %input.form-control{:type => "text", :name => "text", :placeholder => "Текст"}
+      %label.col-md-2.control-label Баллы
+      .col-md-3
+        %input.form-control{:type => "text", :name => "point"}

@@ -1,0 +1,7 @@
+.col-md-4.saleId
+  %span
+    %a{:href => "#"} =@id
+.col-md-4
+  %span =@route
+.col-md-4
+  %span =@dateFormatted

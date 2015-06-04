@@ -1,0 +1,28 @@
+%form.form-inline.panel.panel-info.top-labels
+  .panel-heading
+    %h3.panel-title{style: 'margin-top: 7px;'} Поиск
+  .panel-body
+    .form-body
+      %form
+        .row
+          .col-md-5.col-md-offset-1
+            .text-center
+              %label{for: "year"} Год
+              .input-group.date.date-picker.year
+                %input.form-control{readonly: "readonly", placeholder: "Год", name: "year", type: "text"}
+                %span.input-group-btn
+                  %button.btn.default{type: "button"}
+                    %i.fa.fa-calendar
+          .col-md-5.col-md-offset-1
+            .form-group.text-center
+              %label{for: "month"} Месяц
+              .input-group.date.date-picker.month
+                %input.form-control{readonly: "readonly", placeholder: "Месяц", name: "month", type: "text"}
+                %span.input-group-btn
+                  %button.btn.default{type: "button"}
+                    %i.fa.fa-calendar
+        .text-center
+          .btn-group.text-center
+            %button#reset.btn.red.ttp{type: "reset", title: "Сброс"}
+              %i.fa.fa-times
+            %button.btn.blue.invoice-search{type: 'submit'} Поиск

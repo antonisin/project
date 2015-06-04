@@ -1,0 +1,85 @@
+%div#page-blur
+.col-md-12
+  / Nav tabs
+  %ul.nav.nav-tabs.no-border
+    .btn-group.form-group(data-toggle="buttons")
+      - if @isReceived is true
+        %a.btn.btn-primary{"data-toggle" => "tab", :href => "#payment", :class => "#{if @isReceived is true then 'active'}"}
+          %span
+            %input.label.toggle(name="payment" type="radio" value="1")
+              %i.fa.fa-credit-card
+      - else
+        %a.btn.btn-primary{"data-toggle" => "tab", :href => "#payment", :class => "#{if @isReceived is true then 'active'}", :disabled => 'true'}
+          %span
+            %input.label.toggle(name="payment" type="radio" value="1")
+              %i.fa.fa-credit-card
+      %a.btn.btn-primary{"data-toggle" => "tab", :href => "#sale", :class => "#{if @isReceived is false then 'active'}"}
+        %span
+          %input.label.toggle(name="payment" type="radio" value="1")
+            %i.fa.fa-shopping-cart
+.tab-content.all-tabs
+  #payment.tab-pane{:class => "#{if @isReceived is true then 'active'}"}
+  #sale.tab-pane{:class => "#{if @isReceived is false or @isReceived is undefined then 'active'}"}
+    .t_right
+      .btn-group.no-middle
+        %button#manual.btn.btn-primary Ручной режим
+        %button#import.btn.btn-success Импорт
+    .pnr_area
+      #import-area.pnr_header.clearfix
+        #instruction
+        .pnr_header_right.right
+          %textarea.form-control{:name => "code", :style=>"resize: none;"}
+      #flights
+      #collapse
+        %button#passenger-list.btn.btn-sm.btn-info
+          %i.fa.fa-chevron-up.fa-fw
+      #passangers
+
+      .pnr_val.clearfix.pnr_val_with_border.pnr_val_4
+        .pnr_header.clearfix.clearfix-margin
+          .form-inline.pnr_header_form
+            .form-group
+              %label(for="consolidator") Консолидатор
+              %select.form-control.cons-sel#consolidator(name="consolidator")
+                %option -
+                - for item in @consolidators
+                  %option(value=item.id)= item.name
+            .form-group
+              %label(for="validator") Валидатор
+              %input.form-control.valid-sel.pnr_val_xs#validator(type="text" name="validator" maxlength="2")
+            .form-group
+              %label(for="rate" ) Тип тарифа
+              %select.form-control.tarif-sel#rate(name="rate")
+                %option -
+                - for item in @rates
+                  %option(value=item.id)= item.name
+            .form-group
+              %label(for="fee" ) Комиссия
+              .input-icon.right
+                %i.fa.percent %
+                %input.form-control.pnr_val_xs#fee(type="text" name="fee" maxlength="2" "data-filter-type"="number")
+            .form-group
+              %label(for="income" ) Доход с комиссии
+              %input.form-control#income(type="text" name="totalFee" disabled)
+            .form-group
+              %select.form-control.card-sel(name="paymentType")
+                %option -
+                - for item in @paymenttypes
+                  %option(value=item.id)= item.name
+              %label Одно списание
+              .center-input
+                %input#optionsRadios2(type="radio" name="oneTransaction" value="1") Да
+                %input#optionsRadios2(type="radio" name="oneTransaction" value="0") Нет
+
+          .pnr_val.clearfix.pnr_val_5
+            %span!=  "Итого: <span name='totalMarkup'></span>р (наценка) + <span name='totalFee'></span>р (комиссия) - <span name='totalTax'></span>р (сбор за выписку) - <span name='totalAcquiring'></span>р (эквайринг наценки) = <span name='income'></span>р"
+            %textarea.form-control(rows="5" placeholder="Введите сюда ваши комментарии" name="comment" style="resize: none;")
+            .checkbox.align-left
+              %label
+                %input(type="checkbox" name="hideRoute") убрать маршрут
+              %label
+                %input(type="checkbox" name="showComment" ) добавить комментарии
+              %label
+                %input(type="checkbox" name="hidePersonalData") убрать паспортные данные
+          .text-center
+            %button#send.btn.btn-success(type="button" class="#{'disabled' unless @id}" ) ОТПРАВИТЬ

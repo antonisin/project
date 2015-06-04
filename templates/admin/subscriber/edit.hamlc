@@ -1,0 +1,17 @@
+%form.form-horizontal
+  .form-body
+    .row
+      .form-group
+        .col-md-3.text-right
+          %label.control-label Email
+        .col-md-8
+          %input.form-control{ :type => "text",  :name => "email"}
+    .row
+      .col-md-4.col-md-offset-4
+        %div.btn-group.left{"data-toggle" => "buttons", :style => "font-style: normal;margin-left:14px;"}
+          %button.btn.btn-default
+            %span.ActiveLabelDefault
+              %input.toggle.label(name="isActive", type="radio", value=1) ON
+          %button.btn.btn-default
+            %span.ActiveLabelDefault
+              %input.toggle.label(name="isActive", type="radio", value=0) OFF

@@ -1,0 +1,42 @@
+.lid
+  .clearfix.lid_top
+    .left
+      %span.label(class="#{@historyTypeModel.color}")
+        %i(class="fa fa-#{@historyTypeModel.icon}")
+        Создан заказ
+      %span.label.label-success(name = "order")
+        =@userModel.firstName
+        =@userModel.lastName
+      %span.label.label-default= @created
+    .right
+      %span.btn.btn-xs.green.minimize-activity.hide
+        %i.fa.fa-minus
+      %span.btn.btn-xs.green.maximize-activity
+        %i.fa.fa-plus
+      %span.btn.btn-xs.blue.history-comment.pop{ data-content:"<textarea name='commentText' class='commentText form-control' style='resize: none;'>#{@commentText}</textarea><button class='btn btn-info add-comment'>Save</button>",data-html:"true",data-title: "Комментарии", data-toggle:"popover", data-placement:"top"}
+        %i.fa.fa-comment-o
+    %table.full-activity.hide
+      %tr
+        %td.lid_air
+          %img(alt="" src="/bundles/fwair/images/airplane1.png")
+          - if @data.startLocation
+            = @data.startLocationModel.code + ", "
+          - else
+            ="---, "
+          - if @data.startDate
+            = @data.startDate + " | "
+          - else
+            ="--- |"
+          - if @data.endLocation
+            = @data.endLocationModel.code + ", "
+          - else
+            ="---,"
+          - if @data.endDate
+            = @data.endDate 
+          - else 
+            ="---"
+          %img(alt="" src="/bundles/fwair/images/airplane2.png")
+    %table.comments-list.hide
+      %tr
+        %td
+          .comments

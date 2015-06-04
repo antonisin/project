@@ -1,0 +1,55 @@
+.row
+  .col-md-12
+    %table#bonus-edit.table.table-striped.table-bordered.table-hover.table-full-width{:style => "margin-bottom: 20px;"}
+      %thead
+        %tr
+          %th{:style => "height: 20px;"} GP
+          %th{:style => "height: 20px;"} Бонус
+      %tbody
+        - if @bonus
+          - for i in [0..@bonus.GP.length-1]
+            %tr.text-center
+              %td #{@bonus.GP[i]} р.
+              %td
+                - if @invoiceBonus == @bonus.bonus[i]
+                  %b #{@bonus.bonus[i]} р.
+                - else
+                  #{@bonus.bonus[i]} р.
+        - else
+          %tr.text-center
+            %td{:colspan => "2"} Нет бонуссной схемы
+
+.row
+  .col-md-12
+    %table#scheme-edit.table.table-striped.table-bordered.table-hover.table-full-width
+      %thead
+        %tr
+          %th
+            До
+          %th
+            Более
+          - for conversion,index in @conversions
+            %th
+              - if index == 0
+                До
+              - else
+                Более
+              #{conversion}%
+        %tbody
+          - cols = @conversions.length
+          - nrRows = [0..(@percents.length/cols)-1]
+
+          - for j in nrRows
+            %tr
+              %td
+                #{@GPLid[j*2]} руб.
+              %td
+                #{@GPLid[j*2+1]} руб.
+              - nrCels = [j*cols..(j+1)*cols-1]
+
+              - for i in nrCels
+                %td
+                  - if @invoicePercent and @percents.indexOf(@invoicePercent) == i
+                    %b #{@percents[i]}%
+                  - else
+                    #{@percents[i]}%

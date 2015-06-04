@@ -1,0 +1,23 @@
+%td= @firstName
+%td= @lastName
+%td= @email
+%td.actions-cell.priority-limit
+  %input.statistic.priority.text-center{:name=>"priority", :type=>"text", :value=>"#{@priority}", :maxlength=>3}
+  %span /
+  %input.statistic.limit.text-center{:name=>"userLimit", :type=>"text", :value=>"#{@userLimit}", :maxlength=>3}
+%td.actions-cell
+  .btn-group
+    - if @active
+      %a#active.btn.btn-sm.green
+        %i.fa.fa-check
+    - else
+      %a#active.btn.btn-sm.red
+        %i.fa.fa-times
+%td.actions-cell
+  .btn-group
+    %a#view.btn.btn-sm.blue
+      %i.fa.fa-arrow-circle-right
+    %a#edit.btn.btn-sm.green
+      %i.fa.fa-pencil-square
+    %a#delete.btn.btn-sm.red
+      %i.fa.fa-trash-o

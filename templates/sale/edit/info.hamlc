@@ -1,0 +1,10 @@
+.pnr_header_left.left
+  .alert.alert-block.alert-info
+    %button.close(type="button")
+      %span(aria-hidden="true")
+    %h4.alert-headin.text-center 
+      %i.fa.fa-check-circle.fa-lg
+      Предупреждение
+    %p.text-center Введите корректный PNR.
+
+

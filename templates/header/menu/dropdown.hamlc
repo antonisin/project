@@ -1,0 +1,13 @@
+%a{ :data-toggle => "dropdown", :href => "javascript:;",  :class => "dropdown-toggle", :style => "left:-4px;padding-right: 13px;padding-top: 11px; height: 42px;"}
+  %i.fa{ :class => "fa-#{@icon}"}
+  = @name
+  %i.fa{ :class => "fa-angle-down"}
+%ul.dropdown-menu
+  %li
+    %a{ :href => "#accounting/invoices", :style => "padding-left: 26px;" } Инвойсы
+  %li
+    %a{ :href => "#accounting/fines", :style => "padding-left: 26px;"} Штрафы
+  %li
+    %a{ :href => "#accounting/schemes", :style => "padding-left: 26px;"} Схемы
+  %li
+    %a{ :href => "#accounting/transfers", :style => "padding-left: 26px;"} Переводы

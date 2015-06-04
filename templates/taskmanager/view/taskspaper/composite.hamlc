@@ -1,0 +1,5 @@
+%button.btn.btn-danger.btn-xs.ttp.closeBooking.right{:data-original-title => "", :style => "padding: 0 12px;  margin-right: 10px;"}
+  Закрыть
+%button.btn.btn-success.btn-xs.ttp.addTask.right{:data-original-title => "", :style => "margin-right: 8px;"}
+  Задача
+#items

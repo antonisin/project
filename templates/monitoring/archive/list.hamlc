@@ -1,0 +1,15 @@
+%table#lidstable.table.table-striped.table-bordered.table-hover.table-full-width
+  %thead
+    %th.text-center
+      %i.fa.fa-phone
+    %th.text-center Дата начала
+    %th.text-center Дата завершения
+    %th Клиент
+    %th Агент
+    %th.text-center
+      %i.fa.fa-clock-o
+    %th Тег
+    %th.text-center
+      %i.fa.fa-comment
+    / %th Канал источник/направление
+  %tbody

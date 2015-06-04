@@ -1,0 +1,6 @@
+- if @user_id
+	%td(style="white-space:nowrap")= @user_id.lastName+' '+ @user_id.firstName
+- else 
+	%td(style="white-space:nowrap")
+%td= @createdFormatted
+%td{:style => "word-break: break-all;" } = @text

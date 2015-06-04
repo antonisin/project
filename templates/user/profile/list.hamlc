@@ -1,0 +1,9 @@
+%thead
+  %th
+    %h4 Автор
+  %th(style="width: 100px;") 
+    %h4 Дата
+  %th(style="text-align:center;") 
+    %h4 Комментарий
+%tbody 
+        

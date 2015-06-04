@@ -1,0 +1,23 @@
+.col-md-6
+  %h3.page-title
+    = @firstName
+    = @lastName
+    %small
+      Дэшбоард
+        
+.col-md-6.tright
+  .btn-group.status{"data-toggle" => "buttons"}
+    %label.btn.blue#offline
+      %input.toggle{type: "radio"}
+      Занят
+    %label.btn.blue#online
+      %input.toggle{type: "radio"}
+      Готов
+  .stat_buttons.tright
+    %button.btn.dark#logout{type: "button"} Выход
+    %button.btn.default#lunch{type: "button"}
+      Обед
+      %span.badge(name="lunch")
+    %button.btn.default#smoko{type: "button"}
+      Перекур
+      %span.badge{:name=>"smoko"}

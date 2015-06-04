@@ -1,0 +1,7 @@
+%td =@order
+%td =@text
+%td =@point
+%td.actions-cell
+  .btn-group
+    %a#delete.btn.btn-sm.red
+      %i.fa.fa-trash-o

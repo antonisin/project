@@ -1,0 +1,16 @@
+%td=@order
+%td=@created
+
+- if @lid is null
+  %td -
+- else
+  %td
+    %a{href: "#lid/#{@lid.id}"}=@lid.id
+
+%td=@points
+%td=@reason
+%td.actions-cell
+  - if @isConfirmed is 1 or @isRejected is 1
+    %input.select{type: "checkbox", disabled: "true"}
+  - else
+    %input.select{type: "checkbox"}

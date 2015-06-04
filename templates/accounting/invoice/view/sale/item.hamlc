@@ -1,0 +1,16 @@
+%td=@order
+%td=@paid
+%td=@id
+%td=@reservationCode
+%td Эконом
+%td #{(@income).toFixed(2)} р.
+%td #{(@income / 100 * @percent + @bonus).toFixed(2)} р.
+%td #{((@income / 100 * @percent + @bonus) / window.data['USD']).toFixed(2)} $
+%td 100%
+%td
+  %b #{@percent}%
+%td.actions-cell
+  - if @isConfirmed is 1 or @isRejected is 1
+    %input.select{type: "checkbox", disabled: "true"}
+  - else
+    %input.select{type: "checkbox"}

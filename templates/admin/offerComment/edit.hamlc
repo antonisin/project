@@ -1,0 +1,10 @@
+%form.form-horizontal
+  .form-body
+    .form-group
+      %label.col-md-3.control-label Текст
+      .col-md-9
+        %input.form-control(type="text" name="name" placeholder="Текст")
+    .form-group
+      %label.col-md-3.control-label Системное название
+      .col-md-9
+        %input.form-control(type="text" name="systemName" placeholder="Системное название")

@@ -1,0 +1,94 @@
+- if new Date().setHours(0,0,0,0) == new Date($.datepicker.parseDate('dd/mm/yy', @created)).setHours(0,0,0,0)
+  - color = 'custom-green'
+  %td{:class => "#{color}"}
+    Сегодня
+- else if (new Date().setHours(0,0,0,0) - new Date($.datepicker.parseDate('dd/mm/yy', @created)).setHours(0,0,0,0))/86400000 <= 1
+  - color = 'custom-yellow'
+  %td{:class => "#{color}"}
+    Вчера
+- else if (new Date().setHours(0,0,0,0) - new Date($.datepicker.parseDate('dd/mm/yy', @created)).setHours(0,0,0,0))/86400000 < 100
+  - color = ''
+  %td{:class => "#{color}"}
+    #{((new Date().setHours(0,0,0,0) - new Date($.datepicker.parseDate('dd/mm/yy', @created)).setHours(0,0,0,0))/86400000).toFixed(0)} д. раннее
+- else
+  - color = 'custom-yellow'
+  %td{:class => "#{color}"}
+    Раннее
+%td.notClick{:class => "#{color}"}
+  - if @passangers.length > 1
+    %a(href="#lid/#{@lid}")= "#{@lidModel.id}/#{@lidModel.firstName} #{@lidModel.lastName}"
+    %i.fa.fa-long-arrow-down.lidTableArrow.fa-long-arrow-up
+  - else
+    %a(href="#lid/#{@lid}")= "#{@lidModel.id}/#{@lidModel.firstName} #{@lidModel.lastName}"
+%td{:class => "#{color}"}
+  %div.lidTableItems{ :style=> "overflow: hidden; width: 57px; height:20px; text-overflow: ellipsis;"}
+    #{@id}
+%td{:class => "#{color}"}
+  %div.lidTableItems
+    - if @passangers
+      - for passanger in @passangers
+        %div{ :style => "height: 20px; overflow: hidden; width: 140px; text-overflow: ellipsis;" }
+          #{passanger.firstName} #{passanger.lastName}
+%td{:class => "#{color}"}
+  %div.lidTableItems.text-center
+    - if @flights.length > 0 and @flights[0].startLocationModel
+      %div{ :style => "height:20px; width: 30px; overflow: hidden; " }
+        #{@flights[0].startLocationModel.code}
+    - else
+      &#8212;
+%td{:class => "#{color}"}
+  %div.lidTableItems.text-center
+    - if @flights.length > 0 and @flights[@flights.length - 1].endLocationModel
+      %div{ :style => "height:20px; width: 30px; overflow: hidden;" }
+        #{@flights[@flights.length - 1].endLocationModel.code}
+    - else
+      &#8212;
+%td{:class => "#{color}"}
+  %div.lidTableItems
+    - if @flights.length > 0
+      #{@flights[0].startDate}
+%td{:class => "#{color}"}
+  %div.lidTableItems
+    - if @flights.length > 0
+      #{@flights[@flights.length - 1].endDate}
+%td{:class => "#{color}"}
+  - if @reservationCode
+    #{@reservationCode}
+%td{:class => "#{color}"}
+  0000000000
+%td.text-center{:class => "#{color}"}
+  - if @paymentMethod == 1 and @isPaid == true
+    %span.text-success
+      %i.fa.fa-credit-card.fa-lg
+  - if @paymentMethod == 2 and @isPaid == true
+    %span.text-success
+      %i.fa.fa-file-text-o.fa-lg
+  - if @paymentMethod == 3 and @isPaid == true
+    %span.text-success
+      %i.fa.fa-cab.fa-lg
+  - if @paymentMethod == 4 and @isPaid == true
+    %span.text-success
+      %i.fa.fa-phone.fa-lg
+%td{:class => "#{color}"}
+  01
+%td{:class => "#{color}"}= @created
+%td{:class => "#{color}"}= @income
+%td.text-center{:class => "#{color}"}{:class => "#{color}"}
+  - if @isSent
+    %span.text-success.ttp(title="Отправлено #{@sent}")
+      %i.fa.fa-envelope.fa-lg
+  - else
+    %span.text-muted.ttp(title="Не отправлено")
+      %i.fa.fa-envelope.fa-lg
+
+  - if @isPaid
+    %span.text-success.ttp(title="Оплачено  #{@paid}")
+      %i.fa.fa-dollar.fa-lg
+  - else
+    %span.text-muted.ttp(title="Не оплачено")
+      %i.fa.fa-dollar.fa-lg
+
+%td.actions-cell{:class => "#{color}"}
+  .btn-group
+    %a#delete.btn.btn-sm.red(class="#{'muted' if @role isnt 'admin' and @deleteRequested}")
+      %i.fa.fa-times

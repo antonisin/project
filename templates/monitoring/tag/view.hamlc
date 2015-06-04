@@ -1,0 +1,20 @@
+.form-body
+  .form-group
+    .row
+      .col-md-12
+        - for category in @tags
+          %label.col-md-11.control-label.toggleLabel{:style => "text-align:left; font-size: 130%; padding-top: 0; cursor: pointer;"} #{category.get('name')}
+          .col-md-1
+            %i.fa.fa-angle-down.toggleArrow{:style => 'cursor:pointer; margin-top:10px;'}
+          %hr.col-md-12{:style => "padding: 0; margin: 0 0 8px 0px;"}
+          .col-md-12{:style => "display:none;"}
+            .row
+              - for subcategory in category.get('subcategory')
+                .col-md-4
+                  %label
+                    - if subcategory.id == @tagId
+                      %input{:type => "radio", :name => "tag", :value => "#{subcategory.id}", :style => "top: 3px; position: relative;", :checked => "ckecked"}
+                    - else
+                      %input{:type => "radio", :name => "tag", :value => "#{subcategory.id}", :style => "top: 3px; position: relative;"}
+                    %span{:style => "cursor: pointer;display: inline-table; width: 112px;"} #{subcategory.name}
+          .col-md-12{:style => "margin-bottom: 20px;"}

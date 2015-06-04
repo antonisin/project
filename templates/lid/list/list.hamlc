@@ -1,0 +1,41 @@
+%a#add.btn.btn-warning.toggleList{:style => "float: right; margin-left: 4px; margin-right: 1px;"}
+  %i.fa.fa-angle-down
+%a#add.btn.green.dt-add{:href => "#lid/new" }
+  %i.fa.fa-plus-square
+%a#add.btn.blue.dt-search
+  %i.fa.fa-search
+%table#lidstable.table.table-striped.table-bordered.table-hover.table-full-width
+  %thead
+    %th
+    %th #
+    %th Имя
+    %th Фамилия
+    %th.text-center.ttp.has-tooltip(title="Откуда?" data-container="body")
+      %i.fa.fa-plane
+    %th.text-center.ttp.has-tooltip(title="Куда?" data-container="body")
+      %i.fa.fa-plane.fa-rotate-270
+    %th.text-center.ttp.has-tooltip(title="Вылет" data-container="body")
+      %i.fa.fa-arrow-right
+    %th.text-center.ttp.has-tooltip(title="Прилёт" data-container="body")
+      %i.fa.fa-arrow-left
+    %th.text-center.ttp.has-tooltip(title="Пассажиры" data-container="body")
+      %i.fa.fa-group
+    %th.text-center.ttp.has-tooltip(title="Класс" data-container="body")
+      %i.fa.fa-briefcase
+    %th.text-center.ttp.has-tooltip(title="Номер" data-container="body")
+      %i.fa.fa-phone
+    %th.text-center.ttp.has-tooltip(title="Опции" data-container="body")
+      %i.fa.fa-tags
+    %th.text-center.ttp.has-tooltip(title="Комментарии агента" data-container="body")
+      %i.fa.fa-comment
+    %th.text-center.ttp.has-tooltip(title="Комментарии супервайзера" data-container="body")
+      %i.fa.fa-comment-o
+    %th.text-center.ttp.has-tooltip(title="Email" data-container="body")
+      %i.fa.fa-envelope
+    %th.text-center.ttp.has-tooltip(title="Изменён" data-container="body")
+      %i.fa.fa-money
+    %th.text-center.ttp.has-tooltip(title="Изменён" data-container="body")
+      %i.fa.fa-calendar
+    %th.text-center
+      %i.fa.fa-gear
+  %tbody

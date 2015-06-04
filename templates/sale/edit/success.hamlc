@@ -1,0 +1,11 @@
+.pnr_header_left.left
+  .alert.alert-block.alert-success
+    %button.close(type="button")
+      %span(aria-hidden="true")
+    %h4.alert-heading 
+      %i.fa.fa-check-circle.fa-lg
+      Импорт успешно завершен
+    %p#msg
+      Импорт завершен. Проверьте правильность расшифровки PNR и завершите оформление продажи.
+
+

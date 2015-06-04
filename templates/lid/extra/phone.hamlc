@@ -1,0 +1,6 @@
+.contact_info_form.form-group.btn-group{:style => "margin-top: 2px;"}
+  %input.form-control.max_float_input{placeholder: "Телефон", type: "phone", name: "extraPhone"}
+    %button.btn.btn-success.btn-default
+      %span.fa.fa-phone
+    %button.btn.btn-danger.btn-default.phone_remove
+      %span.fa.fa-times

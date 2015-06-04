@@ -1,0 +1,11 @@
+%thead
+  %th #
+  %th Дата
+  %th Сумма
+  %th Описание
+  %th Агент
+  %th Номер продажи
+  %th Бухгалтер
+  -#%th.text-center
+  -#  %i.fa.fa-gear
+%tbody

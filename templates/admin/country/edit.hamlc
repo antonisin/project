@@ -1,0 +1,22 @@
+%form.form-horizontal
+  .form-body
+    .row
+      .col-md-6
+        .form-group
+          %label.col-md-6.control-label 2-х букв. код
+          .col-md-6
+            %input.form-control.px50(type="text" name="code2" maxlength="2")
+      .col-md-6
+        .form-group
+          %label.col-md-6.control-label 3-х букв. код
+          .col-md-6
+            %input.form-control.px50(type="text" name="code3" maxlength="3")
+
+    %hr
+    - for locale in @locales
+      .form-group
+        %label.col-md-4.control-label
+          %img.flag(src="/bundles/fwmetronic/img/blank.gif" class="flag-#{locale.code}")
+          = "Название (#{locale.name})"
+        .col-md-8
+          %input.form-control(type="text" name="name_#{locale.code}")

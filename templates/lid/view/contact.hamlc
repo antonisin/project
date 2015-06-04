@@ -1,0 +1,15 @@
+.contact_area
+  %button.box_remove.btn.btn-danger.btn-default.max_btn_right
+    %span.glyphicon.glyphicon-remove
+  .contact_title ="Other Contact List"
+  .clearfix
+  .contact_info.left.form-inline
+    .contact_info_form.form-group
+      %input.form-control{placeholder : "First name", type : "text"}
+    .contact_info_form.form-group
+      %input.form-control{placeholder : "Phone", type : "text"}
+  .contact_info.right.form-inline
+    .contact_info_form.form-group
+      %input.form-control{placeholder : "Last name", type : "email"}
+    .contact_info_form.form-group
+      %input.form-control{placeholder : "Email", type : "email"}\n

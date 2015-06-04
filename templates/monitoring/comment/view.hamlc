@@ -1,0 +1,8 @@
+.form-body
+  .form-group
+    %label.col-md-3.control-label
+      Текст (
+      %span#number #{@comment.length}
+      )
+    .col-md-9
+      %textarea.form-control{:type => "text", :name => "comment", :style => "resize: none;", :maxlength => "255"} = @comment

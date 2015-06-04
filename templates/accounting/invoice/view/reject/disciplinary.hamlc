@@ -1,0 +1,12 @@
+%td=@order
+%td=@created
+- if @lid is null
+  %td -
+- else
+  %td=@lid.id
+%td=@points
+%td=@reason
+%td
+  %textarea#rejectComment.form-control{rows: 2, style: "resize: none; font-size: 12px;", maxlength: "30"}=@rejectComment
+
+

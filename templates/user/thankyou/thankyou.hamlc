@@ -1,0 +1,7 @@
+%form.form-horizontal
+  .form-body
+    .form-group
+      %label.col-md-3.control-label Коментарий
+      %span#textarea_number.col-md-9{:style=>"text-align: right;"} 
+      .col-md-9
+        %textarea.form-control#textarea_content(type="text" name="text" maxlength=260 style="resize:none")

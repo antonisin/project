@@ -1,0 +1,13 @@
+.alert.alert-block.alert-success
+  %h4.alert-heading 
+    %i.fa.fa-check-circle
+    Супер!
+  %p
+    Продажа успешно отправлена на следующие адреса:
+    %ul#emails
+    %hr
+    Посмотреть отправленное письмо всегда можно
+    %a#url{target: "_blank"}
+      %i.fa.fa-external-link
+      по этой ссылке
+    (откроется в новом окне)

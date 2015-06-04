@@ -1,0 +1,9 @@
+- if @type is 'separator'
+	%a.separator
+		= @name
+	%span.after
+- else
+	%a(href="#admin/#{@url}")
+		%i.fa(class="fa-#{@icon}")
+		= @name
+	%span.after

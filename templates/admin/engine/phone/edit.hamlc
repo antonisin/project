@@ -1,0 +1,18 @@
+%form.form-horizontal
+  .form-body
+    .form-group
+      %label.col-md-3.control-label Номер
+      .col-md-9
+        %input.form-control{:type => "text", :name => "number", :placeholder => "Номер"}
+    .form-group
+      %label.col-md-3.control-label Реферал
+      .col-md-9
+        %select.form-control{:name => "searchEngine"}
+          - for item in @searchEngines
+            %option{:value => item.id}= item.name
+    .form-group
+      %label.col-md-3.control-label Город
+      .col-md-9
+        %select.form-control{:name => "cityCode"}
+          - for item in @cityCodes
+            %option{:value => item.id}= item.name

@@ -1,0 +1,53 @@
+.pnr_header.clearfix
+  .form-inline.pnr_header_form
+    %span.number-id{:name => "order"} 2
+    %input.form-control.block-2.ttp{:type => "text", :name => "firstName", :title => "Имя", "data-filter-type" => "name"}
+    %input.form-control.block-2.ttp{:type => "text", :name => "lastName", :title => "Фамилия", "data-filter-type" => "name"}
+    .form-group
+      .input-group.date.form_datetime.date-picker.maxDate
+        %input.form-control.block-3.ttp{:type => "text", :readonly => "", :name => "birthday", :title => "Дата Рождения"}
+        %span.input-group-btn
+          %button.btn.default.date-set
+            %i.fa.fa-calendar
+    %input.form-control.block-4.ttp{:type =>"text", :maxlength => "20", :name => "passportNumber", :title => "Номер Паспорта"}
+    .form-group
+      .input-group.date.form_datetime.date-picker.minDate
+        %input.form-control.block-3.ttp{:type => "text", :readonly => "", :name => "passportExpiration", :title => "Дата Истечения"}
+          %span.input-group-btn
+            %button.btn.default.date-set
+              %i.fa.fa-calendar
+    %select.form-control.country-sel.ttp(name="country" title="Страна")
+      %option -
+        %optgroup{:label => 'Популярные'}
+          - for item in window.data.countriesPopular
+            %option{:value => item.id}= item.name
+        %optgroup{:label => 'Остальные'}
+          - for item in @countries
+            %option{:value => item.id}= item.name
+
+    %div.btn-group.right(data-toggle="buttons" style="margin-top:-1px;margin-right: 7px;")
+      %button.btn.btn-default.SexBtn
+        %span.SexLabelDefault
+          %input.toggle.label(name="sex", type="radio", value=0) М
+      %button.btn.btn-default.SexBtn
+        %span.SexLabelDefault
+          %input.toggle.label(name="sex", type="radio", value=1) Ж
+.pnr_val_3.passenger-row
+  .form-inline.mt10.pnr_header_form
+    %input.form-control#firstName.ttp{:type => "text", :name => "firstName", :title => "Имя", "data-filter-type" => "name"}
+    %input.form-control.lastName.ttp{:type => "text", :name => "lastName", :title => "Фамилия", "data-filter-type" => "name"}
+    .form-group
+      %label(for="total" ) Полная стоимость
+      %input.form-control#total{:type => "text", :name => "total", "data-filter-type" => "number"}
+    .form-group
+      %label(for="net" ) Чистая цена
+      %input.form-control#net{:type => "text", :name => "net", "data-filter-type" => "number"}
+    .form-group
+      %label(for="passangerFee" ) Тариф
+      %input.form-control#passangerFee{:type => "text", :name => "fee", "data-filter-type" => "number"}
+    .form-group
+      %label(for="markup" ) Наценка
+      %input.form-control#markup(type="text" name="markup" disabled)
+    .form-group
+      %label(for="tax" ) Сбор за выписку
+      %input.form-control#tax(type="text" name="tax" disabled value=@orderFee)

@@ -1,0 +1,4 @@
+%a{:name => "#{@menuItem}"}
+  %i.fa.fa-plane
+  =@name
+%span.after

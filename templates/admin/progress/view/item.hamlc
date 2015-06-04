@@ -1,0 +1,6 @@
+%img{:src => "/images/upload/#{@image}"}
+%i.fa.fa-times.remove.adminDelete
+.annotation.adminEdit
+  .topic #{@name}
+  %p
+    #{@comment}

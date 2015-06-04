@@ -1,0 +1,78 @@
+.speedbar.clearfix
+  .speedbar_item.active Заказ получен
+  .speedbar_item.long.active Предложения созданы
+  .speedbar_item.current Предложения отправлены
+  .speedbar_item Ответ получен
+  .speedbar_item Заказ отправлен
+.comments_title Комментарии к заказу 
+/ Nav tabs
+%ul.comments_tab.nav.nav-tabs
+  %li.active
+    %a{"data-toggle" => "tab", :href => "#comments"} Комментарии
+  %li
+    %a{"data-toggle" => "tab", :href => "#per"} Переписка
+/ Tab panes
+.comments_tab_content.tab-content
+  #comments.tab-pane.active
+    %textarea{:placeholder => 'Booking comment placeholder'|trans, :name => 'comment'}
+  #per.tab-pane ...
+
+.hist_order
+  .hist_order_top.clearfix
+    %div
+      
+    .hist_order_title
+      Заказ
+      != "#<span name='id'></span> от <span class='text-info' name='created'></span>"
+    .tright
+
+  .order_form.clearfix
+    .order_form_center
+      %label.radio
+        %input{:name => "routeType", :type => "radio", :value => "1"}
+        Туда и обратно
+      %label.radio
+        %input{:name => "routeType", :type => "radio", :value => "2"}
+        Туда
+      / %button.btn-xs.btn.btn-info{:type => "button"}
+      /   %span.glyphicon.glyphicon-plus
+      /   Сложный маршрут
+
+    .order_form_left
+      .passengers
+        /%div= 'Passangers number'|trans
+        %img(alt="" src="bundles/fwair/images/adult.png")
+        %input.form-control{:type => "number", :name => "adults", :value => "1", :min => "0"}
+        %img(alt="" src="bundles/fwair/images/child.png")
+        %input.form-control{:type => "number", :name => "children", :value => "0",:min => "0"}
+        %img(alt="" src="bundles/fwair/images/newborn.png")
+        %input.form-control{:type => "number", :name => "newborns", :value => "0",:min => "0"}
+      .radio-list
+        %label.radio-inline
+          %input{:name => "isBusiness", :type => "checkbox"}
+          Эконом
+        %label.radio-inline
+          %input{:name => "isEconom", :type => "checkbox"}
+          Бизнес
+
+    .order_form_right.clearfix
+      #start.form-group
+        %img(alt="" src="bundles/fwair/images/airplane1.png")
+        %input#startDelta.form-control.input-small{:placeholder => "&plusmn;", :name => "startDelta", :type => "text", :value => ""}
+        %input.form-control.date-picker{:placeholder => 'Date'|trans, :name => "startDate", :type => "text"}
+        %input#startLocation.form-control.input-small{:placeholder => 'Location'|trans, :name => "startLocation", :type => "text"}
+        .city Неизвестная локация
+
+      #end.form-group
+        %img(alt="" src="bundles/fwair/images/airplane2.png")
+        %input#endDelta.form-control.input-small{:placeholder => "&plusmn;", :name => "endDelta", :type => "text", :value => ""}
+        %input.form-control.date-picker{:placeholder => 'Date'|trans, :name => "endDate", :type => "text"}
+        %input#endLocation.form-control.input-small{:placeholder => 'Location'|trans, :name => "endLocation", :type => "text"}
+        .city Неизвестная локация
+        
+  .line#scroll_top
+  .hist_order_title.pos_relative
+    != "Предложения к заказу<span name='id'></span>"
+    %button#offer-add.btn.btn-success.right_button.disabled(type="button") Добавить предложение
+  #offers
+  

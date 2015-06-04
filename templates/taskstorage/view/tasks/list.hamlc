@@ -1,0 +1,15 @@
+%table.table.table-bordered
+  %thead
+    %tr
+      %th
+      %th{:width => "20px"}
+        %i.fa.fa-clock-o
+      %th
+        %i.fa.fa-calendar
+      %th Лид
+      %th{:width => "80px"}
+        %i.fa.fa-plane
+      %th Задача
+      %th{:colspan => "2"}
+        %i.fa.fa-gear
+  %tbody

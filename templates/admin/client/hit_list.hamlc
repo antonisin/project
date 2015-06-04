@@ -1,0 +1,7 @@
+%table.table.table-striped.table-bordered.table-condensed
+  %thead
+    %th Страница
+    %th.text-center
+      %i.fa.fa-refresh
+    %th Дата/время
+  %tbody

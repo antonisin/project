@@ -1,0 +1,71 @@
+.panel{ class: "#{ if @isConfirmed is 1 then 'panel-success' else 'panel-warning' }" }
+  .panel-heading
+    .row
+      .col-md-8
+        %h3.panel-title
+          Пассажир
+          %span{:name => "order"}
+      .col-md-4.text-right
+        %button.btn.btn-success.btn-sm.confirm Подтвердить
+  .panel-body
+    .pnr_header.clearfix{:style => "margin-bottom: 20px"}
+      .form-inline.pnr_header_form
+        %input.form-control.block-2.ttp{:type => "text", :name => "firstName", :title => "Имя", :data-filter-type => "name"}
+        %input.form-control.block-2.ttp{:type => "text", :name => "lastName", :title => "Фамилия", :data-filter-type => "name"}
+        .form-group
+          .input-group.date.form_datetime.date-picker.maxDate
+            %input.form-control.block-3.ttp{:type => "text", :readonly => "", :name => "birthday", :title => "Дата Рождения"}
+            %span.input-group-btn
+              %button.btn.default.date-set
+                %i.fa.fa-calendar
+        %input.form-control.block-4.ttp{:type => "text", :maxlength => "20", :name => "passportNumber", :title => "Номер Паспорта"}
+        .form-group
+          .input-group.date.form_datetime.date-picker.minDate
+            %input.form-control.block-3.ttp{:type => "text", :readonly => "", :name => "passportExpiration", :title => "Дата Истечения"}
+              %span.input-group-btn
+                %button.btn.default.date-set
+                  %i.fa.fa-calendar
+        %select.form-control.country-sel.ttp{:name => "country", :title => "Страна"}
+          %option -
+          - for item in @countries
+            %option{:value => item.id}= item.name
+
+        %div.btn-group.right{:data-toggle => "buttons", :style => "margin-top:-1px;margin-right: 7px;"}
+          %button.btn.btn-default.SexBtn
+            %span.SexLabelDefault
+              %input.toggle.label{:name => "sex", :type => "radio", :value => 0} М
+          %button.btn.btn-default.SexBtn
+            %span.SexLabelDefault
+              %input.toggle.label{:name => "sex", :type => "radio", :value => 1} Ж
+    .pnr_header.clearfix
+      .form-inline.pnr_header_form
+        %input.form-control.block-2.ttp{:type =>"text", :title => "Имя", :value => @paymentPassangerModel?.firstName, :disabled => true}
+        %input.form-control.block-2.ttp{:type =>"text", :title => "Фамилия", :value => @lastName, :disabled => true}
+        .form-group
+          .input-group.date.form_datetime
+            %input.form-control.block-3.ttp{:type => "text", :readonly => "", :title => "Дата Рождения", :value => @paymentPassangerModel?.birthday, :disabled => true}
+            %span.input-group-btn
+              %button.btn.default.date-set
+                %i.fa.fa-calendar
+        %input.form-control.block-4.ttp{:type => "text", :title="Номер Паспорта", :value => @paymentPassangerModel?.passportNumber, :disabled => true}
+        .form-group
+          .input-group.date.form_datetime
+            %input.form-control.block-3.ttp{:type => "text", :readonly => "", :title="Дата Истечения", :value => @paymentPassangerModel?.passportExpiration, :disabled => true}
+              %span.input-group-btn
+                %button.btn.default.date-set
+                  %i.fa.fa-calendar
+        %select.form-control.country-sel.ttp{:name => "newCountry", :title => "Страна", :disabled => "true"}
+          %option -
+          - for item in @countries
+            - if @paymentPassangerModel?.country == item.id
+              %option{:value => item.id, :selected => true}= item.name
+            - else
+              %option{:value => item.id}= item.name
+
+        %div.btn-group.right{:data-toggle => "buttons", :style => "margin-top:-1px;margin-right: 7px;"}
+          %button.btn.btn-default.SexBtn{:disabled => true}
+            %span.SexLabelDefault
+              %input.toggle.label{:name => "sex", :type => "radio", :value => 0} М
+          %button.btn.btn-default.SexBtn{:disabled => true}
+            %span.SexLabelDefault
+              %input.toggle.label{:name => "sex", :type => "radio", :value => 1} Ж

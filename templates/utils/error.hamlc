@@ -1,0 +1,19 @@
+%h2.text-center.red
+  %i.fa.fa-frown-o.fa-2x
+%h4.text-center
+  Произошла ошибка
+%p#errors.text-center
+
+%hr
+%p.text-center
+  Попробуйте
+  %i.fa.fa-tint 
+  поплакать, 
+  %a#refresh(href="#")
+    %i.fa.fa-refresh
+    != "обновить страницу"
+  или
+  %a(href="#dashboard") 
+    %i.fa.fa-home
+    вернуться на главную страницу
+  

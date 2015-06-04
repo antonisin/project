@@ -1,0 +1,60 @@
+.passenger-row
+  .form-inline
+    %h3.text-center Сравнение пассажиров
+    #passangers
+    .form-actions
+      .col-md-7.col-md-offset-5
+        %button.btn.btn-success.confirmAll Подтвердить данные
+    - if @payment.get('paymentMethod')
+      .panel.panel-default
+        .panel-heading
+          .row
+            .col-md-8
+              %h3.panel-title Данные об оплате
+            .col-md-4.text-right
+              - if @payment.get('isPaid') is true or @payment.get('readyForPayment') is false
+                %button.btn.btn-success.pay{:disabled => "true"} Подтвердить оплату
+              - else
+                %button.btn.btn-success.btn-sm.pay Подтвердить оплату
+        .panel-body
+          - if @payment.get('paymentMethod') == 1
+            .form-group.col-md-4
+              %label(for="ccNr") Номер карты:
+              %input.form-control#ccNr{:type=>"text", :name=>"ccNr", :value=>@payment.get('paymentModel').ccNr, :style => "width: 174px;"}
+            .form-group.col-md-2
+              %label(for="expiryMonth") Месец:
+              %input.form-control#expiryMonth{:type=>"text", :name=>"expiryMonth", :value=>@payment.get('paymentModel').validMonth, :style => "width: 50px;"}
+            .form-group.col-md-2
+              %label(for="expiryYear") Год:
+              %input.form-control#expiryYear{:type=>"text", :name=>"expiryYear", :value=>@payment.get('paymentModel').validYear, :style => "width: 50px;"}
+            .form-group.col-md-3
+              %label(for="cvv") Код CVV:
+              %input.form-control#cvv{:type=>"text", :name=>"cvv", :value=>@payment.get('paymentModel').securityCode, :style => "width: 76px;"}
+            .form-group.col-md-4
+              %label(for="name") Имя:
+              %input.form-control#name{:type=>"text", :name=>"name", :value=>@payment.get('paymentModel').name, :style => "width: 235px; margin-top: 10px;"}
+          - else if @payment.get('paymentMethod') == 2
+            %p Банковский перевод:
+          - else if @payment.get('paymentMethod') == 3
+            .form-group
+              %label(for="name") Имя:
+              %input.form-control#name{:type=>"text", :name=>"name", :value=>@payment.get('paymentModel').name}
+            .form-group
+              %label(form="phone") Номер телефона:
+              %input.form-control#phone{:type=>"text", :name=>"phone", :value=>@payment.get('paymentModel').phone}
+            .form-group
+              %label(form="phone") Город:
+              %input.form-control#phone{:type=>"text", :name=>"phone", :value=>@payment.get('paymentModel').phone}
+            .form-group
+              %label(form="address") Адрес:
+              %input.form-control#phone{:type=>"text", :name=>"address", :value=>@payment.get('paymentModel').address}
+            .form-group
+              %label(for="indexCode") Почтовый индекс:
+              %input.form-control#indexCode{:type=>"text", :name=>"indexCode", :value=>@payment.get('paymentModel').indexCode}
+          - else if @payment.get('paymentMethod') == 4
+            .form-group
+              %label.col-md-6.control-label(for="phone") Номер телефона:
+              .col-md-2
+                %input.form-control.input-inline.input-small#phone{:type=>"text",:name=>"phone", :value=>@payment.get('paymentModel').phone}
+    - else
+      .pnr_val.clearfix.no-border

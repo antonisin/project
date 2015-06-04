@@ -1,0 +1,17 @@
+%td=@order
+%td=@dateFormatted
+%td #{@amount + ' руб.'}
+%td=@description
+- if @agentModel
+  %td #{@agentModel.firstName + ' ' + @agentModel.lastName}
+- else
+  %td.actions.text-center
+    %a.btn.green.assign Это мой перевод!
+- if @saleModel
+  %td
+    %a{href: '#{ '#sale/' + @saleModel.id }'}=@saleModel.id
+- else
+  %td -
+%td #{@supervisorModel.firstName + ' ' + @supervisorModel.lastName}
+-#%td.actions.text-center
+-#  %a.btn.blue.edit Редактировать

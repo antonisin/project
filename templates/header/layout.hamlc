@@ -1,0 +1,11 @@
+.header.navbar.navbar-fixed-top.mega-menu
+  .header-inner
+    %a.navbar-brand(href="#dashboard") 
+      .logo Okedel
+    #menu.hor-menu.hidden-sm.hidden-xs
+    %a.navbar-toggle(data-target=".navbar-collapse" data-toggle="collapse" href="javascript:;")
+      %img(alt="" src="/bundles/fwmetronic/img/menu-toggler.png")
+
+    #user-menu
+
+.clearfix

@@ -1,0 +1,117 @@
+.row
+  .col-md-12
+    .col-md-3
+      .user_avatar.pos_relative
+        - if @picture != ''
+          %img{:src=>'/images/upload/' + @picture}
+          .user_ribbon
+            %span 124123 руб.
+        - if @picture == ''
+          %img{:src=>'/images/unknown.gif'}
+          .user_ribbon
+            %span 124123 руб.
+    .col-md-6
+      .user_info
+        %div.user_info_name(style="padding-right:0;")
+          %span(name="firstName") =@firstName
+          %span(name="lastName") =@lastName
+          %span#edit(style="display:none; float: right;")
+            %a.btn.green.btn-sm
+              %i.fa.fa-pencil
+        %div.clearfix
+          %strong.clearfixng.left(style="width: 210px;") Опыт:
+          %span.left(name="exp", style='width:230px;') =@exp
+        %div.clearfix
+          %strong.left(style="width: 210px;") Команда:
+          %span.left(name="topRatedSellers", style='width:230px;')  Top rated sellers
+        %div.clearfix
+          %strong.left(style="width: 210px;") Персональный рекорд:
+          %span.left(name="cash", style='width:230px;') 234624 рублей
+        %div.clearfix
+          %strong.left(style="width: 210px;") Email:
+          %span.left(name="email", style='width:230px;') =@email
+        %div.clearfix
+          %strong.left(style="width: 210px;") Телефон:
+          %span.left(name="phone", style='width:230px;') =@phone
+        %div.clearfix
+          %strong.left(style="width: 210px;") Дополнительный номер:
+          %span.left(name="phone", style='width:230px;') =@addPhone
+        %div.clearfix
+          %strong.left(style="display:block;width: 210px;") Настоящее имя:
+          %span.left(name="firstLast", style='width:230px;') =@firstName
+            =@lastName
+    .col-md-2
+      .user_rating_level
+        Level:
+        %strong(name="level") =@level
+      .user_rating_test
+      .user_rating_info
+        %span
+          %strong EXT:
+          =@id
+        %span
+          %strong> Д.Р:
+          =@birthdayFormatted
+.row
+  .col-md-12
+    .user_info_speedbar.speedbar.clearfix
+      .speedbar_item_detail.active A1
+      .speedbar_item_detail.active A2
+      .speedbar_item_detail.current A3
+      .speedbar_item_detail A4
+      .speedbar_item_detail B1
+      .speedbar_item_detail B2
+      .speedbar_item_detail C1
+      .speedbar_item_detail D1
+.row
+  .col-md-12
+    .user_line
+      %span
+        %strong Общая линия:
+        линия 234523 активирована
+      %span
+        %strong VIP линия:
+        линия 234523 активирована
+      %span.user_line_red
+        %strong Бизнеc-линия:
+        линия 234523 не активирована
+-#.row
+-#  .col-md-12
+-#    .user_cup
+-#      .user_cup_title Награды
+-#      %div
+-#        %img{alt: "", src: "/bundles/fwair/images/cup1.png"}
+-#        %img{alt: "", src: "/bundles/fwair/images/cup1.png"}
+-#        %img{alt: "", src: "/bundles/fwair/images/cup2.png"}
+.row
+  .col-md-12
+    .user_cup
+      .user_cup_title Достижения
+      %div
+        - for item, k in window.data.allProgresses
+          - index = ''
+          - ttp = ''
+          - index = @progressIds?.indexOf(item?.id)
+          - ttp = ('за ' + @progress[index]?.data + ' число')  if (index >= 0)
+
+          .progressItem.ttp{"data-original-title" => "#{item.comment} #{ttp}", :class => "#{'active' if (index >= 0)}"}
+            %img{:alt => "", :src => "/images/upload/#{item.image}"}
+
+        -#- for item in @progress
+        -#  .progressItem.ttp{"data-original-title" => "#{item.progressId.comment}"}
+.row
+  .col-md-12
+    .user_text
+      %form{:id=>"about"}
+        .user_text_title О себе
+        %span(name="about", class = "about_field" ) =@about
+      .user_text_title Спасибо
+      %button.btn.btn-success#thankyou Сказать спасибо
+      %span
+        Всего
+        %strong(name="thanks") =@thanks.legth
+        благодарностей
+        %span
+      .row
+        .col-md-12
+

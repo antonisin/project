@@ -1,0 +1,8 @@
+.row
+  .col.text-center{ :style=> "font-size: 24px; padding-left: 10px; padding-top: 10px; padding-bottom: 20px"}Редактирование категории: "#{@name}"
+
+.row{:style => "margin: 0px 0px 20px 0px;"}
+  %label.col-md-1.control-label.form-group.text-right{:style=>"margin-top: 8px !important;"} Название
+  .col-md-11.form-group
+    %input#location-select.form-control{:placeholder => 'Название', :name => "name", :type => "text", :value => "#{@name}"}
+

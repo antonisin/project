@@ -1,0 +1,2 @@
+%button.btn.btn-info.btn-xs.ttp.hideBlock.right{:data-original-title => ""}
+  %i.fa.fa-chevron-down.fa-fw

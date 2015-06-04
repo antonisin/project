@@ -1,0 +1,8 @@
+%thead
+  %th #
+  %th Дата
+  %th PNR
+  %th Статус
+  %th Сумма
+  %th Причина
+%tbody

@@ -1,0 +1,28 @@
+%a#add.btn.btn-warning.toggleList{:style => "float: right; margin-left: 4px; margin-right: 1px;"}
+  %i.fa.fa-angle-up
+%a#add.btn.blue.dt-search.dt-search-sales
+  %i.fa.fa-search
+%table#salestable.salestable.table.table-striped.table-bordered.table-hover.table-full-width.table-interactive
+  %thead
+    %th
+    %th Лид
+    %th № sale
+    %th Пассажиры
+    %th.text-center.ttp.has-tooltip(title="Откуда?" data-container="body")
+      %i.fa.fa-plane
+    %th.text-center.ttp.has-tooltip(title="Куда?" data-container="body")
+      %i.fa.fa-plane.fa-rotate-270
+    %th.text-center.ttp.has-tooltip(title="Вылет" data-container="body")
+      %i.fa.fa-arrow-right
+    %th.text-center.ttp.has-tooltip(title="Прилет" data-container="body")
+      %i.fa.fa-arrow-left
+    %th PNR
+    %th Номера билетов
+    %th PM
+    %th S
+    %th Создан
+    %th Прибыль
+    %th Статус
+    %th.text-center
+      %i.fa.fa-gear
+  %tbody

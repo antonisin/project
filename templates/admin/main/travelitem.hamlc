@@ -1,0 +1,6 @@
+.col-md-12{:data => "#{@id}" }
+  .form_time.input-group
+    %span.input-group-btn{ :style => "cursor:move;" }
+      %button.btn.default.disabled
+        %span{:name => "order"}
+    %input.form-control{:type => "text", :name => "text"}

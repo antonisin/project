@@ -1,0 +1,6 @@
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; border-right: 1px solid #F4F4F4;background: none;"}
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; border-right: 1px solid #F4F4F4;background: none;"}
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; text-align:right;background: none;"} Всего:
+%td #{@totals}
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; border-right: 1px solid #F4F4F4;background: none;"}
+%td{:style=> "border-bottom: 1px solid #F4F4F4; border-left: 1px solid #F4F4F4; border-right: 1px solid #F4F4F4;background: none;"}

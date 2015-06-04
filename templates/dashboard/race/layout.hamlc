@@ -1,0 +1,24 @@
+.portlet-title
+  .caption
+.portlet-body
+  .tabbable.portlet-tabs
+    %ul.nav.nav-tabs
+      %li.active
+        %a{"data-toggle" => "tab", href: "#queue"} Очередь
+      %li
+        %a{"data-toggle" => "tab", href: "#stats_2_2"} Все агенты
+      %li
+        %a{"data-toggle" => "tab", href: "#stats_2_3"} Гонка
+      %li
+        %a{"data-toggle" => "tab", href: "#stats_2_4"} Логи
+    .tab-content
+      #queue.tab-pane.active
+      #stats_2_2.tab-pane
+        %p
+          Tab 2
+      #stats_2_3.tab-pane
+        %p
+          Tab 3
+      #stats_2_4.tab-pane
+        %p
+          Tab 4

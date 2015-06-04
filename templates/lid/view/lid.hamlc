@@ -1,0 +1,65 @@
+.form_header.clearfix
+  %div
+    %input.form-control{:placeholder => 'Создан', :type => "text", :name => "created", :disabled => true}
+  .form_name
+    %input#firstName.form-control{:placeholder => 'Имя', :type => "text", :name => "firstName", data-filter-type: "name"}
+    %input#lastName.form-control{:placeholder => 'Фамилия', :type => "text", :name => "lastName", data-filter-type: "name"}
+  .header_name
+    %div.btn-group.left.form-group{:data-toggle => "buttons", :style => "margin-bottom: 0px; margin-left: 2px;"}
+      %button.btn.btn-default.SexBtn
+        %span.SexLabelDefault
+          %input.toggle.label(name="sex" type="radio" value=0) М
+      %button.btn.btn-default.SexBtn
+        %span.SexLabelDefault
+          %input.toggle.label(name="sex" type="radio" value=1) Ж
+    %span{:name => "userName"}= ""
+    = ", ext:"
+    %span{:name => "userId"}= ""
+.clearfix.pos_relative.fold_area
+  .btn-group-vertical.btn-expand.btn-expand-contact
+    %button.btn.btn-sm.btn-success.fold_button.ttp{:type => "button", :title => 'Свернуть/развернуть блок', "data-placement" => "right"}
+      %i.fa.fa-fw.fa-minus
+    %button#booking-list.btn.btn-sm.btn-info.ttp.disabled{:type => "button", :title => 'Список заказов', "data-placement" => "right"}
+      %i.fa.fa-fw.fa-list
+    %button#booking-new.btn.btn-sm.btn-info.ttp.disabled{:type => "button", :title => 'Новый заказ', "data-placement" => "right"}
+      %i.fa.fa-fw.fa-plus
+    %button#booking-close.btn.btn-sm.btn-danger.ttp.disabled{:type => "button", :title => 'Закрыть заказ', "data-placement" => "right"}
+      %i.fa.fa-fw.fa-times
+  .fold_box
+    .contact_box.left{:style => "padding-legt: 16px;"}
+      .contact_area{:style => "padding-bottom: 6px;"}
+        .contact_title(style="margin-bottom: 0px;") ='Контактное лицо'
+          -#%div.btn-group.right.form-group{:data-toggle => "buttons", :style => "margin-bottom: 0px;"}
+          -#  %button.btn.btn-default.SexBtn
+          -#    %span.SexLabelDefault
+          -#      %input.toggle.label(name="sex" type="radio" value=0) М
+          -#  %button.btn.btn-default.SexBtn
+          -#    %span.SexLabelDefault
+          -#      %input.toggle.label(name="sex" type="radio" value=1) Ж
+        .clearfix
+          .contact_info.left.form-inline
+            .contact_info_form.form-group.btn-group{:style => "padding-bottom: 6px;"}
+              %input.form-control.max_float_input{:placeholder => 'Телефон', :type => "text", :name => "phone", data-filter-type: "phone"}
+                %button.btn.btn-success.btn-default#globalCall
+                  %span.fa.fa-phone
+                %button.phone_add.btn.btn-info.btn-default.disabled
+                  %span.fa.fa-plus
+              %input{:name => "extraPhones", :type => "hidden"}
+            #extraPhones
+          .contact_info.right.form-inline
+            .contact_info_form.form-group{:style => "padding-bottom: 6px;"}
+              %input.form-control.max_float_input{:placeholder => 'Email', :type => "email", :name => "email", data-filter-type: "email"}
+                %button.btn.btn-success.btn-default.checkEmail
+                  %span.fa.fa-refresh
+                %button.email_add.btn.btn-info.btn-default.disabled{:style => "margin-left: -3px;"}
+                  %span.fa.fa-plus
+            #extraEmails
+    .contact_box.right
+      .clearfix
+        .contact_area{:style => "min-height: 58px;"}
+          %button#extra_lid_add.btn.btn-info.btn-default.max_btn_right.disabled{:style => "position: absolute;"}
+            %span.fa.fa-plus
+          -#.contact_title(style="padding-left:24px;margin-bottom: 24px;") ='Другие контактные лица'
+          %span
+          #extraLids
+

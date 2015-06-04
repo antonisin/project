@@ -1,0 +1,10 @@
+%table#lidstable.table.table-striped.table-bordered.table-hover.table-full-width
+  %thead
+    %th IP
+    %th Реферер
+    %th{:style => "width: 70px;"} Промо
+    %th{:style => "width: 100px;"} Дата/время
+
+    %th.text-center{:style => "width:20px;"}
+      %i.fa.fa-gear
+  %tbody

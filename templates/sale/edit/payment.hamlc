@@ -1,0 +1,50 @@
+.passenger-row
+  .form-inline
+    #passangers
+    - if @payment.paymentMethod
+      .pnr_val.clearfix.pnr_val_with_border.payment_details
+        - if @payment.paymentMethod == 1
+          .form-group
+            %label(for="ccNr") Номер карты:
+            %input.form-control#ccNr{:type=>"text", :name=>"ccNr", :value=>@payment.paymentModel.ccNr}
+          .form-group
+            %label(for="expiryMonth") Месец:
+            %input.form-control#expiryMonth{:type=>"text", :name=>"expiryMonth", :value=>@payment.paymentModel.validMonth}
+          .form-group
+            %label(for="expiryYear") Год:
+            %input.form-control#expiryYear{:type=>"text", :name=>"expiryYear", :value=>@payment.paymentModel.validYear}
+          .form-group
+            %label(for="cvv") Код CVV:
+            %input.form-control#cvv{:type=>"text", :name=>"cvv", :value=>@payment.paymentModel.securityCode}
+          .form-group
+            %label(for="name") Имя:
+            %input.form-control#name{:type=>"text", :name=>"name", :value=>@payment.paymentModel.name}
+        - else if @payment.paymentMethod == 2
+          %p Банковский перевод:
+        - else if @payment.paymentMethod == 3
+          .form-group
+            %label(for="name") Имя:
+            %input.form-control#name{:type=>"text", :name=>"name", :value=>@payment.paymentModel.name}
+          .form-group
+            %label(form="phone") Номер телефона:
+            %input.form-control#phone{:type=>"text", :name=>"phone", :value=>@payment.paymentModel.phone}
+          .form-group
+            %label(form="phone") Город:
+            %input.form-control#phone{:type=>"text", :name=>"phone", :value=>@payment.paymentModel.phone}
+          .form-group
+            %label(form="address") Адрес:
+            %input.form-control#phone{:type=>"text", :name=>"address", :value=>@payment.paymentModel.address}
+          .form-group
+            %label(for="indexCode") Почтовый индекс:
+            %input.form-control#indexCode{:type=>"text", :name=>"indexCode", :value=>@payment.paymentModel.indexCode}
+        - else if @payment.paymentMethod == 4
+          .form-group
+            %label(for="phone") Номер телефона:
+            %input.form-control#phone{:type=>"text",:name=>"phone", :value=>@payment.paymentModel.phone}
+        .col-md-12{:style => "padding: 10px;"}
+          - if @payment.isPaid is true
+            %button.btn.btn-success.pay{:disabled => "true"} Подтвердить оплату
+          - else
+            %button.btn.btn-success.pay Подтвердить оплату
+    - else
+      .pnr_val.clearfix.no-border

@@ -1,0 +1,16 @@
+%td= @id
+- if @searchEngineModel
+  %td= @searchEngineModel.name
+- else
+  %td -
+- if @cityCodeModel
+  %td= @cityCodeModel.name
+- else
+  %td -
+%td= @number
+%td.actions-cell
+  .btn-group
+    %a#edit.btn.btn-sm.green
+      %i.fa.fa-pencil-square
+    %a#delete.btn.btn-sm.red
+      %i.fa.fa-trash-o

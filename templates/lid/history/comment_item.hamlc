@@ -1,0 +1,6 @@
+%td
+  %p=@commentText
+  %span=@userModel.firstName 
+    =@userModel.lastName
+    on 
+    = @created

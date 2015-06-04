@@ -1,0 +1,11 @@
+%a#add.btn.green.dt-add{:href=>"#lid/new"}
+  %i.fa.fa-plus-square
+
+%table#lidstable.table.table-striped.table-bordered.table-hover.table-full-width
+  %thead
+    %th Имя
+    %th Фамилия
+    %th Email
+    %th.text-center
+      %i.fa.fa-gear
+  %tbody

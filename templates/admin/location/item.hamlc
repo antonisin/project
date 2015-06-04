@@ -1,0 +1,15 @@
+%td= @name
+%td.text-center
+  - if @is_city is "1"
+    %label.label.label-warning.bold= "Г"
+  - else
+    %label.label.label-success.bold= "А"
+
+%td= @code
+%td
+  = if @countryModel then @countryModel.name else "-"
+  = if @is_city is "0" then " / #{if @cityModel then @cityModel.name else '-'}"
+
+%td.actions-cell
+  %a#delete.btn.btn-sm.red
+    %i.fa.fa-trash-o

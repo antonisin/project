@@ -1,0 +1,5 @@
+.hist_order_title История работы с лидом
+#collapse.act
+  %button.activity-list.btn.btn-sm.btn-success
+    %i.fa.fa-chevron-down.fa-fw.activity-i
+#history_item.hide

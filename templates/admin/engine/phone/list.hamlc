@@ -1,0 +1,12 @@
+%a#add.btn.green.dt-add
+  %i.fa.fa-plus-square
+
+%table#lidstable.table.table-striped.table-bordered.table-hover.table-full-width
+  %thead
+    %th #
+    %th Реферал
+    %th Город
+    %th Номер
+    %th.text-center
+      %i.fa.fa-gear
+  %tbody

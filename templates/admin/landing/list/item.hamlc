@@ -1,0 +1,17 @@
+%td{ :style => "width: 150px;" } =@location.name 
+%td =@location.code
+%td =@url
+%td =@directionName
+%td{:style=>"white-space: nowrap; overflow:hidden;"} =@landingPrices
+%td =@price
+%td.actions-cell
+  .btn-group
+    - if @isPublic == 1
+      %a#active.btn.btn-sm.green
+        %i.fa.fa-check
+    - else 
+      %a#active.btn.btn-sm.red
+        %i.fa.fa-times
+%td.actions-cell
+  %a#delete.btn.btn-sm.red
+    %i.fa.fa-trash-o

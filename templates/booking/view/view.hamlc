@@ -1,0 +1,79 @@
+.comments_title#title-normal(style="#{'display:none' unless @id}") != "Заказ #<span name='oid'></span> от <span class='text-info' name='created'></span>"
+- unless @id
+  .comments_title#title-new Новый заказ
+
+/ Nav tabs
+%ul.comments_tab.nav.nav-tabs
+  %li.active
+    %a{"data-toggle" => "tab", :href => "#comments"} Комментарии
+  %li
+    %a{"data-toggle" => "tab", :href => "#per"} Переписка
+/ Tab panes
+.comments_tab_content.tab-content
+  #comments.tab-pane.active
+    %textarea.form-control{:placeholder => 'Здесь можно писать любую сопутствующую информацию', :name => 'comment', :style=>'resize: none;'}
+  #per.tab-pane ...
+
+.hist_order
+  .order_form.clearfix
+    .form_z_area
+      .form_z
+        #start.form-group
+          -#%img(alt="" src='/bundles/fwair/images/airplane1.png')
+          %div{:style => "display: inline-table;"}
+            %input#startLocation.form-control.input-small.select2-allowclear{:placeholder => 'Вылет из', :name => "startLocation", :type => "text"}
+            .city.text-center Неизвестная локация
+          %div{:style => "display: inline-table;"}
+            %input#endLocation.form-control.input-small{:placeholder => 'Прилет в', :name => "endLocation", :type => "text"}
+            .city.text-center Неизвестная локация
+          -# End Location
+          .select2-container.form-control.input-small.no-bg
+            %input.form-control.date-picker{:placeholder => 'Дата', :name => "startDate", :type => "text", :readonly => true}
+          %input#startDelta.form-control.input-xs{:placeholder => "&plusmn;", :name => "startDelta", :type => "text", :value => ""}
+          -# End Location
+          .select2-container.form-control.input-small.no-bg
+            %input.form-control.date-picker{:placeholder => 'Дата', :name => "endDate", :type => "text", :readonly => true}
+          %input#endDelta.form-control.input-xs{:placeholder => "&plusmn;", :name => "endDelta", :type => "text", :value => ""}
+        #multiway
+      .order_form_center.form_z
+        %label.radio
+          %input{:name => "routeType", :type => "radio", :value => "1"}
+          туда-обратно
+        %label.radio
+          %input{:name => "routeType", :type => "radio", :value => "2"}
+          в одну сторону
+        %label.radio
+          %input{:name => "routeType", :type => "radio", :value => "3"}
+          Сложный маршрут
+
+      .order_form_z
+        .passengers
+          /%div= 'Passangers number'|trans
+          %img(alt="" src='/bundles/fwair/images/adult.png')
+          %input.form-control{:type => "number", "data-filter-type" => "number", :name => "adults", :value => "1", :min => "0"}
+
+          %img(alt="" src='/bundles/fwair/images/child.png')
+          %input.form-control{:type => "number", "data-filter-type" => "number", :name => "children", :value => "0",:min => "0"}
+
+          %img(alt="" src='/bundles/fwair/images/newborn.png')
+          %input.form-control{:type => "number", "data-filter-type" => "number", :name => "newborns", :value => "0",:min => "0"}
+
+          %label.radio-inline
+            %input{:name => "isEconom", :type => "checkbox"}
+            Эконом
+          %label.radio-inline
+            %input{:name => "isBusiness", :type => "checkbox"}
+            Бизнес
+
+  .line#scroll_top
+  .hist_order_title.offers-list-title.pos_relative
+    != "Предложения по заказу #<span name='oid'></span>"
+    .btn-group.right
+      %button#offer-check.btn.green.right_button.disabled.ttp(type="button", title="Выбрать всё/ничего")
+        %i.fa.fa-check-square-o
+      %button#offer-add.btn.green.right_button.disabled.ttp(type="button", title="Добавить")
+        %i.fa.fa-plus
+      %button#offers-send.btn.blue.right_button.disabled.ttp(type="button", title="Отправить имейл")
+        %i.fa.fa-envelope
+      %button#sale-create.btn.blue.right_button.disabled.ttp(type="button", title="Создать продажу")
+        %i.fa.fa-dollar

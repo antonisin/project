@@ -1,0 +1,14 @@
+- if @agent
+  %h3=@agent.get('firstName') + " " + @agent.get('lastName')
+- else
+  %h3 Все агенты
+%table#fineTable.table.table-striped.table-bordered.table-hover.table-full-width
+  %thead
+    %th #
+    %th Дата
+    %th Лид
+    %th Баллы
+    %th Нарушение
+    %th.text-center
+      %i.fa.fa-gear
+  %tbody

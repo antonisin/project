@@ -1,0 +1,32 @@
+.row.gray_wrap
+  .col-md-12
+    .row
+      .col-md-12
+        #details.text-center
+    .row
+      #saleFines.col-md-6
+      #disciplinaryFines.col-md-6
+    .row
+      #sales.col-md-12
+    .row
+      .col-md-2.col-md-offset-3
+        %select.form-control{:style => "margin-top: 24px;"}
+          - for scheme in window.data['schemes']
+            %option.scheme{:value => "#{scheme.id}", :selected => "#{scheme.id == @scheme ? true : ''}"} #{scheme.schemeName}
+    .row
+      #scheme.col-md-6.col-md-offset-3
+    .row
+      #controls
+        .btn-group.col-md-offset-4
+          %button.btn.green#confirm{class: "#{if @isConfirmed or @isRejected then 'disabled'}"}
+            %i.fa.fa-check
+            Подтвердить Инвойс
+          %button.btn.red#reject{class: "#{if @isConfirmed or @isRejected then 'disabled'}"}
+            %i.fa.fa-times
+            Отклонить
+          %button.btn.btn-primary#download
+            %i.fa.fa-download
+            Скачать
+          %button.btn.btn-warning#sendEmail
+            %i.fa.fa-envelope
+            На e-mail

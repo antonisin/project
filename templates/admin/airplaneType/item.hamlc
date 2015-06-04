@@ -1,0 +1,6 @@
+%td= @name
+%td= @code
+
+%td.actions-cell
+  %a#delete.btn.btn-sm.red
+    %i.fa.fa-trash-o

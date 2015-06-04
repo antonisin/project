@@ -1,0 +1,21 @@
+%form.form-horizontal
+  .form-body
+    .form-group{ :style => "margin-bottom: 4px;" }
+      %label.col-md-3.control-label Имя
+      .col-md-9
+        %input.form-control{ :type => "text",  :name => "name", :placeholder => "Имя" , :style => "padding-left: 8px;"}
+    .form-group{ :style => "margin-bottom: 4px; word-break: break-all;" }
+      %label.col-md-3.control-label 
+        Текст ( 
+        %span#number #{@text.length} 
+        ) 
+      .col-md-9
+        %textarea.form-control{ :type => "text", :maxlength => "255",  :name => "text", :placeholder => "Текст", :style => "resize:none;padding-left: 8px; height: 100px;"  }
+    .form-group{ :style => "margin-bottom: 4px;" }
+      %label.col-md-3.control-label Откуда
+      .col-md-9
+        %input#startLocation-select.form-control{:placeholder => 'Откуда', :name => "startLocation", :type => "text"}
+    .form-group{ :style => "margin-bottom: 4px;" }
+      %label.col-md-3.control-label Куда
+      .col-md-9
+        %input#endLocation-select.form-control{:placeholder => 'Куда', :name => "endLocation", :type => "text"}

@@ -1,0 +1,7 @@
+%td=@order
+%td=@created
+%td=@pnr
+%td=@status
+%td=@value
+%td
+  %textarea#rejectComment.form-control{rows: 2, style: "resize: none; font-size: 12px;", maxlength: "30"}=@rejectComment

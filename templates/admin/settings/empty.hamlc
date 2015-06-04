@@ -1,0 +1,4 @@
+%td.text-center(colspan=4 style="text-align:center;border-right: 0px;border-left: 0px;") Нет настроек
+%td(style='display: none;')
+%td(style='display: none;')
+%td(style='display: none;')

@@ -1,0 +1,46 @@
+.well
+  %form.form-inline
+    .row
+      .col-md-10
+        .col-md-2
+          .form-group
+            .input-group.date.date-picker.createdFrom
+              %input.form-control{readonly: "readonly", type: "text", name: "createdFrom", placeholder: "Создан с:"}
+              %span.input-group-btn
+                %button.btn.default{type: "button"}
+                  %i.fa.fa-calendar
+        .col-md-2
+          .form-group
+            .input-group.date.date-picker.createdTill
+              %input.form-control{readonly: "readonly", type: "text", name: "createdTill", placeholder: "Создан по:"}
+              %span.input-group-btn
+                %button.btn.default{type: "button"}
+                  %i.fa.fa-calendar
+        .col-md-2
+          .form-group
+            %select.form-control{:type => "text", :name => "period", :placeholder => "Период"}
+              %option{value: ""} -
+              %option{value: "today"} сегодня
+              %option{value: "yesterday"} вчера
+              %option{value: "this-week"} на этой неделе
+              %option{value: "last-week"} на прошлой неделе
+              %option{value: "this-month"} в этом месяце
+              %option{value: "last-month"} в прошлом месяце
+              %option{value: "half-year"} полгода
+              %option{value: "year"} год
+        .col-md-2
+          .form-group
+            %input.form-control{:type => "text", :name => "minAmount", :placeholder => "Мин. сумма"}
+        .col-md-2
+          .form-group
+            %input.form-control{:type => "text", :name => "maxAmount", :placeholder => "Макс. сумма"}
+        .col-md-2
+          .form-group
+            %input.form-control{:type => "text", :name => "description", :placeholder => "Описание"}
+      .col-md-2
+        .col-md-4.col-md-offset-2
+          %a.btn.green.searchBtn
+            %i.fa.fa-refresh
+        .col-md-4
+          %a.btn.blue.watch
+            %i.fa.fa-bell

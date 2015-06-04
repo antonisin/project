@@ -1,0 +1,4 @@
+- if @role == @get('system_name')
+  %option{:value => @get('system_name') , :name=> "option", :roleId=> @get('id') , :selected => "selected"} =@get('name')
+- else
+  %option{:value => @get('system_name') , :name=> "option", :roleId=> @get('id')} =@get('name')

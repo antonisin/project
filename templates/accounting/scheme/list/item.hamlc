@@ -1,0 +1,14 @@
+%td{:style => 'width:20px;'}
+  =@modelIndex
+%td
+  =@schemeName
+%td
+  =@percentBegin
+%td
+  =@percentEnd
+%td.actions-cell.not-click{:style => 'width:100px;'}
+  .btn-group
+    %a#edit.btn.btn-sm.green
+      %i.fa.fa-pencil
+    %a#remove.btn.btn-sm.red
+      %i.fa.fa-trash-o

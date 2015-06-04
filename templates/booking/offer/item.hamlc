@@ -1,0 +1,86 @@
+.caption_area#selects(style="width: 90%;")
+  %label
+    %input#selected(type="checkbox")
+    %span.label.label-success(name='order')
+    %span.label.label-info(name='createdFormatted')
+    %span.label.green-meadow(name='total')
+    %span.label.label-warning(name='markUp')
+.buttons_area.btn-group.dropup
+  %button#properties.btn.btn-warning.btn-xs.ttp(data-toggle='dropdown' title="Добавить ярлык")
+    %i.fa.fa-bookmark.fa-fw
+  - if @id
+    %button#minimize.btn.btn-info.btn-xs.ttp(title="Свернуть предложение")
+      %i.fa.fa-chevron-down.fa-fw
+    %button#maximize.btn.btn-info.btn-xs(style="display:none;")
+      %i.fa.fa-chevron-up.fa-fw
+    %button#remove.btn.btn-danger.btn-xs.ttp(title="Удалить предложение")
+      %i.fa.fa-times.fa-fw
+  .dropdown-menu.dropdown-checkboxes.dropdown-offer-opts.hold-on-click
+    .row
+      #labels.col-md-6
+        %h6 Ярлыки
+        - for item in @labels.models
+          %label
+            %input{name: "label", value: item.id, type: "radio"}
+            = item.get 'name'
+        %label
+          %input{name: "label", value: 0, type: "radio"}
+          %input.form-control.input-sm(type="text" placeholder="Свое значение" disabled name="customLabel" maxlength="50")
+        .colors
+          - for col in @colors.models
+            .cell(style="background-color: ##{col.get 'color'}; box-shadow: 0px 0px 7px 0px ##{col.get 'color'};" id= col.id)
+          %input(type="hidden" name="labelColor")
+      #comments.col-md-6
+        %h6 Комментарии
+        - for item in @comments.models
+          %label
+            %input{name: "comment", value: item.id, type: "checkbox"}
+            = item.get('name')
+        %label
+          %input{name: "comment",id: "commentCB", value: 0, type: "checkbox"}
+          %input.form-control.input-sm(type="text" id="customCommentCB" placeholder="Свое значение" disabled name="customComment" maxlength="50")
+.clear
+
+.alert.alert-block.alert-danger.offer-errors(style = 'display:none;')
+  %button.close(type="button")
+    %span(aria-hidden="true")
+  %h4.alert-heading
+    %i.fa.fa-times-circle
+    Ошибка валидации
+  %p#errors
+.alert.alert-block.alert-warning.offer-errors(style = 'display:none;')
+  %button.close(type="button")
+    %span(aria-hidden="true")
+  %h4.alert-heading
+    %i.fa.fa-times-circle
+    Предупреждения
+  %p#warnings
+  %div.offer-warning-buttons
+    %button.btn.btn-xs.btn-warning#force-true(type="button")
+      Все равно продолжить
+    %button.btn.btn-xs.btn-danger#force-false(type="button")
+      Отменить
+%table.offers_form
+  %tr
+    %td.text-right
+      %img(alt="" src='/bundles/fwair/images/adult.png')
+    %td
+      %input.form-control{:placeholder => 'Реальная цена', :name => "adultNet", :type => "text", 'data-filter' => 'number', :maxlength => 5}
+    %td
+      %input.form-control{:placeholder => 'Цена для продажи', :name => "adultSale", :type => "text", 'data-filter' => 'number', :maxlength => 5}
+    %td.fixed-450{:rowspan => "3"}
+      %textarea.form-control{:name => "code", :placeholder => "Код билетов", :disabled => @id isnt undefined}
+  %tr
+    %td.text-right
+      %img(alt="" src='/bundles/fwair/images/child.png')
+    %td
+      %input.form-control{:placeholder => 'Реальная цена', :name => "childNet", :type => "text", 'data-filter' => 'number', :maxlength => 5}
+    %td
+      %input.form-control{:placeholder => 'Цена для продажи', :name => "childSale", :type => "text", 'data-filter' => 'number', :maxlength => 5}
+  %tr
+    %td.text-right
+      %img(alt="" src='/bundles/fwair/images/newborn.png')
+    %td
+      %input.form-control{:placeholder => 'Реальная цена', :name => "newbornNet", :type => "text", 'data-filter' => 'number', :maxlength => 5}
+    %td
+      %input.form-control{:placeholder => 'Цена для продажи', :name => "newbornSale", :type => "text", 'data-filter' => 'number', :maxlength => 5}

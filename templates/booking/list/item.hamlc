@@ -1,0 +1,11 @@
+%td= @startDate
+%td= @endDate
+%td= "#{@adults} / #{@children} / #{@newborns}"
+%td= @statusModel.name
+%td= @offersNumber
+%td= @createdFormatted
+%td= @changedFormatted
+%td.actions-cell
+  - if @deletable
+    %a#delete.btn.btn-xs.red(class ="#{'muted' if @status is 5 }")
+      %i.fa.fa-times

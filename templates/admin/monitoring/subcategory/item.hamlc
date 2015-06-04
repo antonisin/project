@@ -1,0 +1,8 @@
+%td= @id
+%td= @name
+%td.actions-cell
+  .btn-group
+    %a#edit.btn.btn-sm.green
+      %i.fa.fa-pencil-square
+    %a#delete.btn.btn-sm.red(class ="#{'muted' if @isSystem}")
+      %i.fa.fa-trash-o

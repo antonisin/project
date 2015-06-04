@@ -1,0 +1,4 @@
+%a(href="##{@url}") 
+  %i.fa(class="fa-#{@icon}")
+  = @name
+%span.selected(style="display:none")

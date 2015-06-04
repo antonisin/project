@@ -1,0 +1,5 @@
+.row
+  #filter.col-md-5
+  #new.col-md-7
+.row
+  #fine.col-md-12
